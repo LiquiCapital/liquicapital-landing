@@ -51,13 +51,12 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">Cómo Funciona</a></li>
           <li><a class="nav-link scrollto" href="#counts">Calculadora</a></li>
-          <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
       </nav><!-- .navbar -->
-      <div class="header-actions d-flex align-items-center"> <a
-          href="https://app.liquicapital.com/clients"
+      <div class="header-actions d-flex align-items-center"> <a href="https://app.liquicapital.com/clients"
           style="background:#fff;color:#007bff;border:1px solid #007bff;" class="btn-sign-in scrollto">Iniciar
           Sesión</a>
-        <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&scope=openid&response_type=id_token&prompt=login&signingup=true"
+        <a id="cta-signup"
+          href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&scope=openid&response_type=id_token&prompt=login&signingup=true"
           class="btn-get-started scrollto">Registrarme</a>
 
       </div>
@@ -124,7 +123,7 @@
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-user"></i></div>
-              <h4 class="title"><a href="">1. Crea tu cuenta</a></h4>
+              <h4 class="title"><a href="#signup-overlay">1. Crea tu cuenta</a></h4>
               <p class="description">Te pediremos datos mínimos para que puedas completar el proceso a tu tiempo.</p>
             </div>
 
@@ -261,25 +260,19 @@
         </div>
 
         <div class="row" data-aos="fade-left">
-          <div class="col-lg-3 col-md-4">
+          <div class="col-lg-4 col-md-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
               <i class="ri-store-line" style="color: #ffbb2c;"></i>
               <h3><a href="">Te da capital de trabajo sin endeudamiento</a></h3>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-              <h3><a href="">No consulta centrales de riesgo</a></h3>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="col-lg-4 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
               <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
               <h3><a href="">Es de corto plazo: menos intereses</a></h3>
             </div>
           </div>
-          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="col-lg-4 col-md-4 mt-4 mt-lg-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
               <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
               <h3><a href="">Más rápido que los créditos tradicionales</a></h3>
@@ -560,7 +553,27 @@
       });
     });
   </script>
+  <div id="signup-overlay" class="lc-overlay" aria-hidden="true">
+    <a class="lc-overlay__bg" href="#about" aria-label="Cerrar"></a>
 
+    <div class="lc-overlay__card" role="dialog" aria-modal="true" aria-labelledby="lc-title">
+      <button class="lc-overlay__close" aria-label="Cerrar" onclick="location.hash='#about'">×</button>
+
+      <div class="lc-overlay__arrow" aria-hidden="true"></div>
+
+      <h3 id="lc-title">¿Listo para empezar?</h3>
+      <p>Crea tu cuenta y continúa el proceso cuando quieras.</p>
+
+      <a class="lc-overlay__cta"
+        href="hhttps://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&scope=openid&response_type=id_token&prompt=login&signingup=true"
+        rel="nofollow">
+        Registrarme
+      </a>
+      <br />
+      <br />
+      <small class="lc-overlay__hint">Tip: podrás completar el proceso a tu ritmo.</small>
+    </div>
+  </div>
 </body>
 
 </html>
