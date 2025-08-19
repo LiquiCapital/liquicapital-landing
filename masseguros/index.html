@@ -691,13 +691,24 @@
         }
 
         function calculate() {
-            const amount = parseInt(document.getElementById('amountRange').value);
+            const amount = parseFloat(document.getElementById('amountRange').value);
             const days = parseInt(document.getElementById('daysValue').value);
-            const exponente = (days / 360)
-            const portencia = Math.pow(1.32, exponente)
-            const montoFinanciado = (amount * 0.98)
-            const valorDesembolso = Math.round(montoFinanciado / portencia)
-            document.getElementById('finalAmount').innerText = `$${valorDesembolso.toLocaleString('en-US')}`;
+
+            // Parámetros financieros (puedes moverlos a config)
+            const anticipo = 0.90;        // 90% de anticipo
+            const tasaMensual = 0.03;     // 3% mensual
+
+            // 1. Calcular crédito después del aforo
+            const importeCredito = amount * anticipo;
+
+            // 2. Calcular interés proporcional al plazo
+            const meses = days / 30;
+            const costoFinanciero = importeCredito * tasaMensual * meses;
+
+            // 3. Neto a depositar
+            const netoDepositar = Math.round(importeCredito - costoFinanciero);
+
+            document.getElementById('finalAmount').innerText = `$${netoDepositar.toLocaleString('en-US')}`;
         }
 
         // Initialize values
