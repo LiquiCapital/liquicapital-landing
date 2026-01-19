@@ -30,6 +30,416 @@
   <!-- Template Main CSS File -->
   <link href="/assets/css/style.css" rel="stylesheet">
 
+  <!-- Custom Simulador Styles -->
+  <style>
+    .simulador-section {
+      background: linear-gradient(135deg, #2c3e7a 0%, #1a2855 100%);
+      padding: 80px 0;
+      color: white;
+    }
+
+    .simulador-title {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 30px;
+    }
+
+    .text-highlight {
+      color: #f0ad4e;
+    }
+
+    .simulador-subtitle {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .btn-simulador-cta {
+      display: inline-block;
+      background: #f0ad4e;
+      color: #2c3e7a;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-simulador-cta:hover {
+      background: #ec971f;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(240, 173, 78, 0.4);
+    }
+
+    .simulador-calculator {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+    }
+
+    .calculator-label {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 500;
+      color: white;
+    }
+
+    .slider-custom {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(to right, #f0ad4e 0%, #f0ad4e 2.5%, #444 2.5%, #444 100%);
+      outline: none;
+      border-radius: 50px;
+      margin: 20px 0;
+    }
+
+    .slider-custom::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .slider-custom::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .slider-labels-custom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 10px;
+    }
+
+    .amount-display {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      margin: 30px 0;
+    }
+
+    .options-custom {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .option-custom {
+      border: 2px solid #f0ad4e;
+      border-radius: 50px;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      color: white;
+      background: transparent;
+    }
+
+    .option-custom:hover {
+      background-color: #f0ad4e;
+      color: #2c3e7a;
+    }
+
+    .option-custom.selected {
+      background-color: #f0ad4e;
+      color: #2c3e7a;
+    }
+
+    .btn-info-cta {
+      display: block;
+      width: 100%;
+      background: #f0ad4e;
+      color: #2c3e7a;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-info-cta:hover {
+      background: #ec971f;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(240, 173, 78, 0.4);
+    }
+
+    @media (max-width: 991px) {
+      .simulador-title {
+        font-size: 2rem;
+      }
+
+      .amount-display {
+        font-size: 2.5rem;
+      }
+
+      .simulador-calculator {
+        padding: 30px 20px;
+      }
+    }
+
+    /* ===== OVERRIDE ALL GREEN COLORS TO YELLOW/ORANGE ===== */
+
+    /* Main CTA buttons - WHITE TEXT */
+    .btn-get-started,
+    #hero .btn-get-started,
+    .btn-simulador-cta,
+    .btn-info-cta {
+      background: #f0ad4e !important;
+      color: #ffffff !important;
+      border-color: #f0ad4e !important;
+    }
+
+    .btn-get-started:hover,
+    #hero .btn-get-started:hover,
+    .btn-simulador-cta:hover,
+    .btn-info-cta:hover {
+      background: #ec971f !important;
+      color: #ffffff !important;
+      border-color: #ec971f !important;
+    }
+
+    /* Secondary buttons with white bg */
+    .btn-sign-in {
+      background: #fff !important;
+      color: #2c3e7a !important;
+      border: 1px solid #2c3e7a !important;
+    }
+
+    .btn-sign-in:hover {
+      background: #f0f0f0 !important;
+      color: #2c3e7a !important;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      background: #f0ad4e !important;
+    }
+
+    .back-to-top:hover {
+      background: #ec971f !important;
+    }
+
+    /* All icons - override any green colors */
+    .icon-box i,
+    .count-box i,
+    footer i,
+    .bx,
+    .ri-shield-check-line,
+    .ri-store-line,
+    .ri-umbrella-line,
+    .ri-file-list-3-line,
+    .ri-calendar-todo-line {
+      color: #f0ad4e !important;
+    }
+
+    /* Specific icon color for bank/blue theme */
+    .ri-bank-line {
+      color: #2c3e7a !important;
+    }
+
+    /* Section title decorations */
+    .section-title h2::before,
+    .section-title h2::after {
+      background: #f0ad4e !important;
+    }
+
+    /* Navbar - WHITE TEXT with yellow indicator */
+    #header .nav-link {
+      color: #ffffff !important;
+    }
+
+    #header .nav-link.active,
+    #header .nav-link:hover {
+      color: #ffffff !important;
+    }
+
+    #header .nav-link.active::before {
+      background: #f0ad4e !important;
+    }
+
+    /* Mobile nav toggle */
+    .mobile-nav-toggle {
+      color: #fff !important;
+    }
+
+    /* Count boxes */
+    .count-box i {
+      color: #ffffff !important;
+      background: #f0ad4e !important;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .counts .count-box i {
+      background: #f0ad4e !important;
+      color: #ffffff !important;
+    }
+
+    /* Highlight text */
+    .highlight {
+      color: #f0ad4e !important;
+    }
+
+    /* Options/selectors */
+    .option,
+    .option-custom {
+      border: 2px solid #f0ad4e !important;
+      color: #fff !important;
+    }
+
+    .option:hover,
+    .option.selected,
+    .option-custom:hover,
+    .option-custom.selected {
+      background-color: #f0ad4e !important;
+      color: #ffffff !important;
+    }
+
+    /* Footer background and text */
+    #footer {
+      background: #2c3e7a !important;
+      border-top: 3px solid #f0ad4e !important;
+    }
+
+    .footer-top {
+      background: #2c3e7a !important;
+      border-top-color: #f0ad4e !important;
+    }
+
+    /* Footer info box border */
+    #footer .footer-top .footer-info {
+      border-top: 4px solid #f0ad4e !important;
+      background: #2c3e7a !important;
+    }
+
+    /* Footer elements */
+    .footer-newsletter input[type="submit"] {
+      background: #f0ad4e !important;
+      border: none !important;
+      color: #ffffff !important;
+    }
+
+    .footer-newsletter input[type="submit"]:hover {
+      background: #ec971f !important;
+    }
+
+    /* Footer border accents - YELLOW not green */
+    footer [style*="border-left: 4px solid"] {
+      border-left-color: #f0ad4e !important;
+    }
+
+    /* Quote icons */
+    .quote-icon-left,
+    .quote-icon-right {
+      color: #f0ad4e !important;
+    }
+
+    /* FAQ - Only open/active question should be yellow */
+    .faq-list a {
+      color: #444444 !important;
+    }
+
+    .faq-list a:not(.collapsed) {
+      color: #f0ad4e !important;
+    }
+
+    .faq-list .icon-help {
+      color: #f0ad4e !important;
+    }
+
+    .faq-list .icon-show,
+    .faq-list .icon-close {
+      color: #f0ad4e !important;
+    }
+
+    /* Hero waves - keep white */
+    .hero-waves use {
+      fill: #fff !important;
+    }
+
+    /* Overlay/Modal CTA */
+    .lc-overlay__cta {
+      background: #f0ad4e !important;
+      color: #ffffff !important;
+    }
+
+    .lc-overlay__cta:hover {
+      background: #ec971f !important;
+      color: #ffffff !important;
+    }
+
+    /* Preloader */
+    #preloader:before {
+      border: 6px solid #f0ad4e !important;
+      border-top-color: #fce5cd !important;
+    }
+
+    /* Links - only in content areas, not navigation */
+    main a,
+    footer a:not(.btn-get-started):not([type="submit"]) {
+      color: #f0ad4e !important;
+    }
+
+    main a:hover,
+    footer a:hover:not(.btn-get-started):not([type="submit"]) {
+      color: #ec971f !important;
+    }
+
+    /* Any remaining green colors from style.css */
+    [style*="#1acc8d"],
+    [style*="#17b57d"],
+    [style*="#5fcf80"],
+    [style*="#11dbcf"],
+    [style*="rgb(26 204 141)"],
+    [style*="rgb(26, 204, 241)"] {
+      color: #f0ad4e !important;
+    }
+
+    /* Override background colors */
+    [style*="background:#1acc8d"],
+    [style*="background: #1acc8d"],
+    [style*="background-color:#1acc8d"],
+    [style*="background-color: #1acc8d"],
+    [style*="background: #5fcf80"],
+    [style*="background-color: #5fcf80"] {
+      background: #f0ad4e !important;
+      background-color: #f0ad4e !important;
+    }
+
+    /* Override border colors */
+    [style*="border-color:#1acc8d"],
+    [style*="border-color: #1acc8d"],
+    [style*="border: 6px solid #1acc8d"],
+    [style*="border-left: 4px solid #5fcf80"] {
+      border-color: #f0ad4e !important;
+    }
+  </style>
+
   <!-- =======================================================
   * Updated: Mar 17 2024 with Bootstrap v5.3.3
   * Author: Liquicapital Innapsis
@@ -44,7 +454,7 @@
 
       <div class="logo">
         <a href="index.html" style="display:flex;align-items:center;gap:16px;">
-          <img src="/assets/img/logo2.png" alt="LiquiCapital" class="img-fluid" style="height:40px;">
+          <img src="/assets/img/logo-bg.png" alt="LiquiCapital" class="img-fluid" style="height:40px;">
           <img src="/assets/img/masseguros-logo.png" alt="MAS Seguros" class="img-fluid"
             style="height:40px;background:#eab43a;border-radius:6px;padding:2px 8px;">
         </a>
@@ -52,15 +462,16 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto active" href="#simulador">Calculadora</a></li>
+          <li><a class="nav-link scrollto" href="#beneficios-mas-seguros">Beneficios</a></li>
           <li><a class="nav-link scrollto" href="#about">Cómo Funciona</a></li>
-          <li><a class="nav-link scrollto" href="#counts">Calculadora</a></li>
+          <li><a class="nav-link scrollto" href="#normatividad">Normatividad</a></li>
           <li class="d-block d-md-none mt-2">
             <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&amp;client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&amp;nonce=defaultNonce&amp;redirect_uri=https://app.liquicapital.com/clients&amp;scope=openid&amp;response_type=id_token&amp;prompt=login"
-              style="background:#fff;color:#007bff;border:1px solid #007bff; margin: 15px;"
+              style="background:#fff;color:#2c3e7a;border:1px solid #2c3e7a; margin: 15px;"
               class="btn btn-sm btn-block mb-2">Iniciar Sesión</a>
             <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&amp;client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&amp;nonce=defaultNonce&amp;redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&amp;scope=openid&amp;response_type=id_token&amp;prompt=login&amp;signingup=true&amp;allianceCode=8"
-              style="background:#fff;color:#007bff;border:1px solid #007bff; margin: 15px;"
+              style="background:#f0ad4e;color:#2c3e7a;border:1px solid #f0ad4e; margin: 15px;"
               class="btn btn-sm btn-primary btn-block"> </i>Registrarme</a>
           </li>
         </ul>
@@ -68,7 +479,7 @@
       <div class="header-actions d-none d-md-flex align-items-center">
         <div class="me-2">
           <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&amp;client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&amp;nonce=defaultNonce&amp;redirect_uri=https://app.liquicapital.com/clients&amp;scope=openid&amp;response_type=id_token&amp;prompt=login"
-            style="background:#fff;color:#007bff;border:1px solid #007bff;" class="btn-sign-in scrollto">Iniciar
+            style="background:#fff;color:#2c3e7a;border:1px solid #2c3e7a;" class="btn-sign-in scrollto">Iniciar
             Sesión</a>
         </div>
         <div>
@@ -81,6 +492,52 @@
 
     </div>
   </header><!-- End Header -->
+
+  <!-- ======= Simulador / Calculadora ======= -->
+  <section id="simulador" class="simulador-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Columna Izquierda: Texto y CTA -->
+        <div class="col-lg-5 col-md-12 mb-4 mb-lg-0" data-aos="fade-right">
+          <h1 class="simulador-title">
+            Convierte tus facturas en <span class="text-highlight">efectivo inmediato</span>
+          </h1>
+          <p class="simulador-subtitle">
+            Obtén liquidez en 48 horas con tasas preferenciales. Factoraje financiero simple y confiable
+            para tu negocio.
+          </p>
+          <a href="#signup-overlay" class="btn-simulador-cta">Solicitar mi línea ahora</a>
+        </div>
+
+        <!-- Columna Derecha: Calculadora -->
+        <div class="col-lg-7 col-md-12" data-aos="fade-left">
+          <div class="simulador-calculator">
+            <h5 class="calculator-label">Monto total de tus facturas</h5>
+            <input class="slider-custom" type="range" id="amountRange" min="25000" max="1000000" value="25000"
+              oninput="updateAmountValue(this.value)">
+            <div class="slider-labels-custom">
+              <span>$25,000 MXN</span>
+              <span>$1,000,000 MXN</span>
+            </div>
+            <h2 id="amountValue" class="amount-display">$25,000</h2>
+
+            <h5 class="calculator-label mt-4">¿En qué plazo te pagan tus facturas en promedio?</h5>
+            <input style="display: none;" id="daysValue" value="45" oninput="updateDaysValue(this.value)">
+            <div class="options-custom">
+              <div class="option-custom" data-value="35">35</div>
+              <div class="option-custom" data-value="45">45</div>
+              <div class="option-custom" data-value="60">60</div>
+              <div class="option-custom" data-value="90">90</div>
+              <div class="option-custom" data-value="120">120</div>
+            </div>
+
+            <a href="#signup-overlay" class="btn-info-cta mt-4">Quiero más información</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Simulador -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -95,7 +552,7 @@
             <div class="text-center text-lg-start">
               <a href="#simulador" class="btn-get-started scrollto">Solicitar mi línea ahora $</a>
               <a href="#about" class="btn-get-started scrollto"
-                style="background:#fff;color:#007bff;border:1px solid #007bff;">Conoce cómo funciona</a>
+                style="background:#fff;color:#2c3e7a;border:1px solid #2c3e7a;">Conoce cómo funciona</a>
             </div>
           </div>
         </div>
@@ -159,16 +616,14 @@
         </div>
       </div>
     </section>
+
     <!-- ======= Cómo Funciona ======= -->
     <section id="about" class="about">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
-          <div class="col-xl-3 col-lg-6 d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-          </div>
-          <div
-            class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
-            data-aos="fade-left">
-            <h3>¿Cómo funciona?</h3>
+          <div class="col-12 icon-boxes d-flex flex-column align-items-start justify-content-start text-start py-5"
+            data-aos="fade-up">
+            <h3 style="text-align: left; margin-bottom: 30px;">¿Cómo funciona?</h3>
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-user"></i></div>
               <h4 class="title"><a href="#signup-overlay">1. Regístrate – conecta tu SAT y sube la
@@ -205,19 +660,19 @@
         <div class="row" data-aos="fade-left">
           <div class="col-lg-4 col-md-6">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
-              <i class="ri-shield-check-line" style="color: #11dbcf;"></i>
+              <i class="ri-shield-check-line" style="color: #f0ad4e;"></i>
               <h3>Plataforma certificada ISO 27001</h3>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-              <i class="ri-bank-line" style="color: #5578ff;"></i>
+              <i class="ri-bank-line" style="color: #2c3e7a;"></i>
               <h3>Fondos provistos por LiquiCapital, fintech líder en factoraje digital.</h3>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
-              <i class="ri-umbrella-line" style="color: #ffbb2c;"></i>
+              <i class="ri-umbrella-line" style="color: #f0ad4e;"></i>
               <h3>Cobertura de seguros MAS Seguros para proteger tu cadena de suministro.</h3>
             </div>
           </div>
@@ -312,60 +767,6 @@
       </div>
     </section>
 
-    <section id="simulador" class="container">
-
-      <div class="section-title" data-aos="fade-up">
-        <h2>SIMULADOR</h2>
-        <p>CALCULA CUÁNTO PUEDES RECIBIR HOY</p>
-      </div>
-      <div class="container">
-        <div class="slider-container">
-          <h5 data-aos="fade-up" style="text-align: center;">Monto total de tus CFDIs</h5>
-          <input class="slider" type="range" id="amountRange" min="25000" max="1000000" value="180000"
-            oninput="updateAmountValue(this.value)">
-          <div class="slider-labels">
-            <span>$25,000 MXN</span>
-            <span>$1,000,000 MXN</span>
-          </div>
-          <h4 id="amountValue" style="text-align:center; background-color:#f0f0f0; padding:10px; border-radius:50px;">
-            <b>$180,000</b>
-          </h4>
-          <br>
-          <h5 data-aos="fade-up" style="text-align: center;">¿En qué plazo te pagan tus facturas en promedio?
-          </h5>
-          <input style="display: none;" id="daysValue" value="45" oninput="updateDaysValue(this.value)">
-          <div class="options">
-            <div class="option" data-value="35">35</div>
-            <div class="option" data-value="45">45</div>
-            <div class="option" data-value="60">60</div>
-            <div class="option" data-value="90">90</div>
-            <div class="option" data-value="120">120</div>
-          </div>
-        </div>
-
-        <div class="result-container">
-          <h4 style="margin-bottom: 25px;"><b>Simulación de una operación</b></h4>
-          <h4 class="highlight">Recibes: <span id="finalAmount">$170,383</span></h4>
-          <br>
-          <div class="requirements">
-            <h5>Antes de comenzar ten en cuenta las siguientes recomendaciones:</h5>
-            <ul>
-              <li>La empresa debe tener al menos 24 meses de existencia</li>
-              <li>Relación comercial de 18 meses o más con tus clientes</li>
-              <li>Tener un buró de crédito positivo sin moras vigentes</li>
-              <li>Cumplir con compliance de AML</li>
-              <li>Ten a la mano tu firma fiel y clave CIEC</li>
-            </ul>
-          </div>
-          <div style="text-align: center;">
-            <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fapp.liquicapital.com&scope=openid&response_type=id_token&prompt=login&signingup=true"
-              class="btn-get-started scrollto">Iniciar Ahora</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Simulador -->
-
     <!-- ======= VENTAJAS ======= -->
 
     <section id="features" class="features">
@@ -379,19 +780,19 @@
         <div class="row" data-aos="fade-left">
           <div class="col-lg-4 col-md-4">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
-              <i class="ri-store-line" style="color: #ffbb2c;"></i>
+              <i class="ri-store-line" style="color: #f0ad4e;"></i>
               <h3><a href="">Te da capital de trabajo sin endeudamiento</a></h3>
             </div>
           </div>
           <div class="col-lg-4 col-md-4 mt-4 mt-md-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
-              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+              <i class="ri-calendar-todo-line" style="color: #f0ad4e;"></i>
               <h3><a href="">Es de corto plazo: menos intereses</a></h3>
             </div>
           </div>
           <div class="col-lg-4 col-md-4 mt-4 mt-lg-0">
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-              <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+              <i class="ri-file-list-3-line" style="color: #f0ad4e;"></i>
               <h3><a href="">Más rápido que los créditos tradicionales</a></h3>
             </div>
           </div>
@@ -399,84 +800,175 @@
     </section>
     <!-- ======= Testimonials Section ======= -->
     <!--      
-  <section id="testimonials" class="testimonials">
-    <div class="container">
+    <section id="testimonials" class="testimonials">
+      <div class="container">
 
-      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
 
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>Rodrigo Romo</h3>
-              <h4>CEO &amp; Founder</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Referencia 1.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Rodrigo Romo</h3>
+                <h4>CEO &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Referencia 1.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <h3>Sara Jimenez</h3>
-              <h4>Contadora</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Refencia 2.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Jimenez</h3>
+                <h4>Contadora</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Refencia 2.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <h3>Jena Gonzalez</h3>
-              <h4>Gerente</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Ref 3
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Gonzalez</h3>
+                <h4>Gerente</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ref 3
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <h3>Mauricio David</h3>
-              <h4>Financiero</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Ref 4.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Mauricio David</h3>
+                <h4>Financiero</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ref 4.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <img src="/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <h3>John Gutierrez</h3>
-              <h4>Contador</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Ref 5.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Gutierrez</h3>
+                <h4>Contador</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ref 5.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
             </div>
-          </div>
 
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
 
-    </div>
-  </section>
--->
+      </div>
+    </section>
+ -->
+    <!-- ======= Normatividad Section ======= -->
+    <section id="normatividad" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up" style="margin-bottom: 20px;">
+          <h2>NORMATIVIDAD</h2>
+          <p>Información Regulatoria y de Cumplimiento</p>
+        </div>
+
+        <div class="faq-list" style="padding-left: 0; max-width: 100%;">
+          <ul>
+            <!-- UNE -->
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i>
+              <a data-bs-toggle="collapse" class="collapse" data-bs-target="#normatividad-une">
+                Unidad Especializada de Atención a Usuarios (UNE)
+                <i class="bx bx-chevron-down icon-show"></i>
+                <i class="bx bx-chevron-up icon-close"></i>
+              </a>
+              <div id="normatividad-une" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  <strong>Unidad Especializada de Atención a Usuarios: Administradora Liquicapital SA
+                    de CV SOFOM ENR</strong><br><br>
+                  <strong>Domicilio:</strong> Espacio Santa Fe ubicado en carretera México - Toluca
+                  No. 5420, oficina 702-A, Colonia El Yaqui, Alcaldía Cuajimalpa, CDMX. CP
+                  05320<br><br>
+                  <strong>Teléfono:</strong> (52) 55 9504 6600<br>
+                  <strong>Correo electrónico:</strong> une@liquicapital.com<br>
+                  <strong>Horario de atención:</strong> 9:00 a 17:00 horas, de lunes a viernes
+                </p>
+              </div>
+            </li>
+
+            <!-- Despachos de Cobranza -->
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-file-blank icon-help"></i>
+              <a href="/assets/docs/poster-despachos-cobranza.pdf" target="_blank" class="collapsed">
+                Despachos de Cobranza
+                <i class="bx bx-link-external"></i>
+              </a>
+            </li>
+
+            <!-- Buró de Entidades Financieras -->
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-file-blank icon-help"></i>
+              <a href="/assets/docs/poster-buro-entidades-financieras.pdf" target="_blank" class="collapsed">
+                Buró de Entidades Financieras
+                <i class="bx bx-link-external"></i>
+              </a>
+            </li>
+
+            <!-- Aviso de Privacidad -->
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-file-blank icon-help"></i>
+              <a href="/assets/docs/aviso-privacidad.pdf" target="_blank" class="collapsed">
+                Aviso de Privacidad
+                <i class="bx bx-link-external"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Logos Regulatorios -->
+        <div class="row mt-5" data-aos="fade-up">
+          <div class="col-12 text-center">
+            <h4 style="margin-bottom: 30px;">Organismos Reguladores</h4>
+            <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
+              <a href="https://eduweb.condusef.gob.mx/redeco/redeco.aspx" target="_blank" rel="noopener noreferrer"
+                title="REDECO">
+                <img src="/assets/img/logo-redeco.jpg" alt="REDECO"
+                  style="height: 70px; width: auto; transition: transform 0.3s;"
+                  onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+              </a>
+              <a href="https://www.buro.gob.mx/" target="_blank" rel="noopener noreferrer"
+                title="Buró de Entidades Financieras">
+                <img src="/assets/img/logo-buro-EF.png" alt="Buró de Entidades Financieras"
+                  style="height: 70px; width: auto; transition: transform 0.3s;"
+                  onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+              </a>
+              <a href="https://www.condusef.gob.mx/" target="_blank" rel="noopener noreferrer" title="CONDUSEF">
+                <img src="/assets/img/logo-condusef.png" alt="CONDUSEF"
+                  style="height: 70px; width: auto; transition: transform 0.3s;"
+                  onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Normatividad Section -->
+
     <!-- ======= FAQ ======= -->
 
     <section id="faq" class="faq section-bg">
@@ -596,48 +1088,128 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-4 col-md-6">
-            <div class="footer-info">
-              <h3>ADMINISTRADORA LIQUICAPITAL S.A. DE C.V. SOFOM E.N.R</h3>
-              <p class="pb-3"><em>Trabajamos para que puedas concentrarte en lo que más importa: tu
-                  negocio.</em>
+          <div class="col-lg-8 col-md-12 mb-4">
+            <div class="footer-info" style="text-align: left;">
+              <h3 style="font-size: 1.3rem; margin-bottom: 20px; text-align: left;">ADMINISTRADORA
+                LIQUICAPITAL S.A. DE C.V. SOFOM E.N.R</h3>
+              <p class="pb-3" style="font-style: italic; font-size: 0.95rem; text-align: left;">
+                Trabajamos para que puedas concentrarte en lo que más importa: tu negocio.
               </p>
-              <br>
-              <p>No supervisada por la CNBV</p>
-              <br>
-              <p>
-                Espacio Santa Fe ubicado en carretera México - Toluca No. 5420, oficina 702A<br>
-                Colonia El Yaqui, Alcaldia Cuajimalpa. CDMX. C.P. 05320.<br><br>
-                <strong>Phone:</strong> +52 (33) 3777 1640<br>
-                <strong>Email:</strong> info@liquicapital.com<br>
-              </p>
+
+              <div
+                style="background-color: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: left;">
+                <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 15px; text-align: left;">
+                  <strong>ADMINISTRADORA LIQUICAPITAL, S.A. DE C.V., SOFOM, E.N.R.</strong>, es una
+                  empresa mexicana,
+                  legalmente constituida, registrada ante la CONDUSEF, para su constitución y
+                  operación, no requiere
+                  autorización de la Secretaría de Hacienda y Crédito Público, y está sujeta a la
+                  Supervisión y Vigilancia
+                  de la Comisión Nacional Bancaria y de Valores, únicamente para los efectos del
+                  Artículo 56 de la Ley
+                  General de Organizaciones y Actividades Auxiliares del Crédito.
+                </p>
+                <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 0; text-align: left;">
+                  Por lo anterior, está supervisada en materia de Prevención de Lavado de Dinero y
+                  Financiamiento al
+                  Terrorismo por el Servicio de Administración Tributaria (SAT) a través de la misma
+                  CNBV, de acuerdo con
+                  las Disposiciones de carácter general a que se refiere el artículo 115 de la Ley de
+                  Instituciones de
+                  Crédito en relación con el 95-bis de la Ley General de Organizaciones y Actividades
+                  Auxiliares del
+                  Crédito, aplicables a las Sociedades Financieras de Objeto Múltiple, publicadas en
+                  el Diario Oficial de
+                  la Federación el 17 de Marzo de 2011, y diversas resoluciones posteriores.
+                </p>
+              </div>
+
+              <div style="font-size: 0.9rem; line-height: 1.8; text-align: left;">
+                <p style="margin-bottom: 10px; text-align: left;">
+                  <i class="bx bx-map" style="color: #f0ad4e; margin-right: 8px;"></i>
+                  Espacio Santa Fe ubicado en carretera México - Toluca No. 5420, oficina 702A<br>
+                  <span style="margin-left: 28px;">Colonia El Yaqui, Alcaldía Cuajimalpa. CDMX. C.P.
+                    05320.</span>
+                </p>
+                <p style="margin-bottom: 5px; text-align: left;">
+                  <i class="bx bx-phone" style="color: #f0ad4e; margin-right: 8px;"></i>
+                  <strong>Phone:</strong> +52 (33) 3777 1640
+                </p>
+                <p style="margin-bottom: 0; text-align: left;">
+                  <i class="bx bx-envelope" style="color: #f0ad4e; margin-right: 8px;"></i>
+                  <strong>Email:</strong> info@liquicapital.com
+                </p>
+              </div>
               <!--               <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div> -->
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div> -->
             </div>
           </div>
 
           <!--           <div class="col-lg-2 col-md-6 footer-links">
-          <h4>Links</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre Nosotros</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-          </ul>
-        </div> -->
+            <h4>Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre Nosotros</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div> -->
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Nuestra Newsletter</h4>
-            <p>Entérate de las últimas noticias del financiamiento para empresas mexicanas.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Suscribirme">
-            </form>
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="row h-100">
+              <!-- Newsletter -->
+              <div class="col-lg-12 mb-4">
+                <div class="footer-newsletter" style="text-align: left;">
+                  <h4 style="margin-bottom: 15px; text-align: left;">Nuestra Newsletter</h4>
+                  <p style="margin-bottom: 20px; font-size: 0.9rem; text-align: left;">
+                    Entérate de las últimas noticias del financiamiento para empresas mexicanas.
+                  </p>
+                  <form action="" method="post" style="display: flex; gap: 8px;">
+                    <input type="email" name="email" placeholder="Tu correo electrónico" style="flex: 1; padding: 10px 15px; border: 1px solid rgba(255,255,255,0.1);
+                                                      border-radius: 25px; background: rgba(255,255,255,0.05);">
+                    <input type="submit" value="Suscribirme"
+                      style="padding: 10px 25px; background: #f0ad4e; border: none;
+                                                      border-radius: 25px; cursor: pointer; font-weight: 600; white-space: nowrap;">
+                  </form>
+                </div>
+              </div>
 
+              <!-- Leyendas Obligatorias -->
+              <div class="col-lg-12">
+                <div style="background-color: rgba(255,255,255,0.05); padding: 25px; border-radius: 8px;
+                                            border-left: 4px solid #f0ad4e;">
+                  <h5 style="margin-bottom: 15px; font-size: 0.95rem;">
+                    <i class="bx bx-info-circle" style="color: #f0ad4e;"></i> Información Importante
+                  </h5>
+                  <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="font-size: 0.8rem; margin-bottom: 10px; padding-left: 25px; position: relative;">
+                      <i class="bx bx-check"
+                        style="position: absolute; left: 0; color: #f0ad4e; font-size: 1.2rem;"></i>
+                      No cumplir con tus obligaciones puede generar comisiones e intereses
+                      moratorios (cuando apliquen).
+                    </li>
+                    <li style="font-size: 0.8rem; margin-bottom: 10px; padding-left: 25px; position: relative;">
+                      <i class="bx bx-check"
+                        style="position: absolute; left: 0; color: #f0ad4e; font-size: 1.2rem;"></i>
+                      Contratar créditos que excedan tu capacidad de pago afecta tu historial
+                      crediticio.
+                    </li>
+                    <li style="font-size: 0.8rem; margin-bottom: 0; padding-left: 25px; position: relative;">
+                      <i class="bx bx-check"
+                        style="position: absolute; left: 0; color: #f0ad4e; font-size: 1.2rem;"></i>
+                      El avalista, obligado solidario o coacreditado responderá como obligado
+                      principal por el total del pago frente a la entidad financiera (cuando
+                      aplique).
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -672,45 +1244,31 @@
   <!-- Simulador -->
   <script>
     function updateAmountValue(value) {
+      const amountInput = document.getElementById('amountRange');
+      const min = amountInput.min;
+      const max = amountInput.max;
+      const percentage = ((value - min) / (max - min)) * 100;
+
+      // Update gradient
+      amountInput.style.background = `linear-gradient(to right, #f0ad4e 0%, #f0ad4e ${percentage}%, #444 ${percentage}%, #444 100%)`;
+
+      // Update display
       document.getElementById('amountValue').innerText = `$${parseInt(value).toLocaleString('en-US')}`;
-      calculate();
     }
 
     function updateDaysValue(value) {
       document.getElementById('daysValue').value = value;
-      calculate();
-    }
-
-    function calculate() {
-      const amount = parseFloat(document.getElementById('amountRange').value);
-      const days = parseInt(document.getElementById('daysValue').value);
-
-      // Parámetros financieros (puedes moverlos a config)
-      const anticipo = 0.90;        // 90% de anticipo
-      const tasaMensual = 0.03;     // 3% mensual
-
-      // 1. Calcular crédito después del aforo
-      const importeCredito = amount * anticipo;
-
-      // 2. Calcular interés proporcional al plazo
-      const meses = days / 30;
-      const costoFinanciero = importeCredito * tasaMensual * meses;
-
-      // 3. Neto a depositar
-      const netoDepositar = Math.round(importeCredito - costoFinanciero);
-
-      document.getElementById('finalAmount').innerText = `$${netoDepositar.toLocaleString('en-US')}`;
     }
 
     // Initialize values
-    calculate();
+    updateAmountValue(25000);
   </script>
 
   <!-- Selector -->
   <script>
-    document.querySelectorAll('.option').forEach(option => {
+    document.querySelectorAll('.option-custom').forEach(option => {
       option.addEventListener('click', () => {
-        document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+        document.querySelectorAll('.option-custom').forEach(opt => opt.classList.remove('selected'));
         option.classList.add('selected');
         updateDaysValue(option.getAttribute('data-value'))
       });
@@ -734,7 +1292,7 @@
       </a>
       <br />
       <br />
-      <small class="lc-overlay__hint">Tip: podrás completar el proceso a tu ritmo.</small>
+      <small class="lc-overlay__hint">Podrás completar el proceso a tu ritmo.</small>
     </div>
   </div>
 </body>
