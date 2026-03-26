@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Liquicapital — Supply Chain Finance</title>
+    <meta content="Financiamiento ágil para las dos puntas de tu cadena de suministro. Sin deuda bancaria, sin procesos lentos, 100% digital." name="description">
+    <meta content="factoraje, pronto pago, supply chain finance, liquicapital, cuentas por cobrar, cuentas por pagar" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="../assets/fonts/satoshi/css/satoshi.css" rel="stylesheet">
+
+    <!-- Icon libraries -->
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Vendor CSS -->
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0B1D3A;
+            --navy-mid: #122F55;
+            --navy-light: #1A3050;
+            --blue: #00A3E0;
+            --blue-dark: #0080B3;
+            --blue-glow: rgba(0,163,224,0.13);
+            --white: #FFFFFF;
+            --off-white: #F7F8FA;
+            --warm-gray: #F0F2F5;
+            --dark: #1A1A2E;
+            --sub: #4A5568;
+            --muted: #8896A6;
+            --light: #E2E8F0;
+            --green: #10B981;
+            --green-soft: #D1FAE5;
+            --amber: #F59E0B;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Satoshi', system-ui, sans-serif; background: var(--white); }
+        ::selection { background: rgba(0,163,224,0.19); }
+        a { text-decoration: none; }
+
+        /* ── NAV ── */
+        .pp-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all .3s; padding: 18px 0; }
+        .pp-nav.scrolled { background: rgba(255,255,255,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,.06); padding: 10px 0; }
+        .pp-nav .nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+        .pp-nav .logo-wrap { display: flex; align-items: center; gap: 8px; }
+        .pp-nav .logo-wrap img { height: 40px; width: auto; }
+        .pp-nav .nav-links { display: flex; align-items: center; gap: 28px; }
+        .pp-nav .nav-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.8); }
+        .pp-nav.scrolled .nav-links a { color: var(--sub); }
+        .pp-nav .btn-cta { font-size: 13px; font-weight: 700; padding: 9px 22px; border-radius: 8px; border: none; background: var(--blue); color: #fff; cursor: pointer; }
+
+        /* ── HERO ── */
+        .pp-hero { background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%); min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+        .pp-hero .glow { position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,163,224,.07) 0%, transparent 70%); }
+        .pp-hero .grid-bg { position: absolute; inset: 0; opacity: .025; background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 80px 80px; }
+        .pp-hero .hero-inner { max-width: 1140px; margin: 0 auto; padding: 140px 24px 80px; position: relative; z-index: 1; width: 100%; }
+        .pp-hero .hero-center { text-align: center; max-width: 760px; margin: 0 auto; }
+
+        .pp-hero .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,163,224,.1); border-radius: 100px; padding: 6px 18px; margin-bottom: 28px; }
+        .pp-hero .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+        .pp-hero .badge span { font-size: 12px; color: var(--blue); font-weight: 600; letter-spacing: .5px; }
+
+        .pp-hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; color: #fff; line-height: 1.08; margin: 0 0 20px; letter-spacing: -1.5px; }
+        .pp-hero .hero-sub { font-size: 19px; color: rgba(255,255,255,.6); line-height: 1.6; margin: 0 auto 44px; max-width: 540px; }
+
+        /* ── DUAL CARDS ── */
+        .dual-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 700px; margin: 0 auto; }
+        .dual-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 32px 24px; text-align: left; transition: all .3s; cursor: pointer; }
+        .dual-card:hover.card-blue { background: rgba(0,163,224,.08); border-color: rgba(0,163,224,.3); }
+        .dual-card:hover.card-green { background: rgba(16,185,129,.08); border-color: rgba(16,185,129,.3); }
+        .dual-card .card-icon { font-size: 32px; margin-bottom: 14px; line-height: 1; }
+        .dual-card .card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+        .dual-card .card-title { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; line-height: 1.2; }
+        .dual-card .card-desc { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.55; margin-bottom: 20px; }
+        .dual-card .card-btn { font-size: 13px; font-weight: 700; padding: 11px 24px; border-radius: 8px; border: none; color: #fff; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+
+        /* ── TRUST BAR ── */
+        .trust-bar { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 48px; flex-wrap: wrap; }
+        .trust-bar .label { font-size: 12px; color: rgba(255,255,255,.3); }
+        .trust-bar .item { padding: 5px 14px; background: rgba(255,255,255,.04); border-radius: 6px; border: 1px solid rgba(255,255,255,.06); font-size: 11px; font-weight: 700; color: rgba(255,255,255,.4); letter-spacing: 1.5px; }
+
+        /* ── CxC SECTION ── */
+        .pp-cxc { padding: 80px 0; background: var(--white); }
+        .pp-cxc .inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 12px; }
+        .section-title { font-size: 36px; font-weight: 900; line-height: 1.1; margin: 0 0 16px; letter-spacing: -.5px; }
+        .section-desc { font-size: 16px; line-height: 1.65; margin: 0 0 28px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+        .tag { font-size: 12px; font-weight: 600; color: var(--blue); background: rgba(0,163,224,.06); padding: 6px 14px; border-radius: 100px; }
+
+        .steps-card { background: var(--off-white); border-radius: 20px; padding: 36px; }
+        .steps-card .steps-label { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px; }
+        .steps-card .step { display: flex; gap: 16px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--light); }
+        .steps-card .step:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .steps-card .step-num { width: 40px; height: 40px; border-radius: 10px; background: var(--white); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--blue); flex-shrink: 0; border: 1px solid var(--light); }
+        .steps-card .step-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+        .steps-card .step-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+        .btn-primary { font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 10px; border: none; color: #fff; cursor: pointer; display: inline-block; }
+
+        /* ── CxP SECTION ── */
+        .pp-cxp { padding: 80px 0; background: var(--navy); }
+        .pp-cxp .inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .benefits-card { background: rgba(255,255,255,.03); border-radius: 20px; padding: 36px; border: 1px solid rgba(255,255,255,.06); }
+        .benefits-card .benefits-label { font-size: 12px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px; }
+        .benefits-card .benefit { display: flex; gap: 14px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,.06); }
+        .benefits-card .benefit:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .benefits-card .benefit-icon { font-size: 22px; flex-shrink: 0; width: 28px; text-align: center; }
+        .benefits-card .benefit-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+        .benefits-card .benefit-desc { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.5; }
+
+        /* ── SOCIAL PROOF ── */
+        .pp-proof { padding: 60px 0; background: var(--off-white); }
+        .pp-proof .inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .pp-proof .metric { text-align: center; }
+        .pp-proof .metric-val { font-size: 32px; font-weight: 900; color: var(--dark); }
+        .pp-proof .metric-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+        /* ── CTA ── */
+        .pp-cta { padding: 70px 0; background: linear-gradient(135deg, var(--navy), var(--navy-mid)); text-align: center; }
+        .pp-cta .inner { max-width: 600px; margin: 0 auto; padding: 0 24px; }
+        .pp-cta h2 { font-size: 32px; font-weight: 900; color: #fff; margin: 0 0 16px; letter-spacing: -.5px; }
+        .pp-cta p { font-size: 16px; color: rgba(255,255,255,.5); margin: 0 0 32px; }
+        .pp-cta .btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .btn-outline { font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,.2); background: transparent; color: #fff; cursor: pointer; display: inline-block; }
+
+        /* ── FOOTER ── */
+        .pp-footer { background: #060E1A; padding: 48px 0 28px; }
+        .pp-footer .inner { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+        .pp-footer .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+        .pp-footer .footer-brand img { height: 36px; width: auto; margin-bottom: 12px; }
+        .pp-footer .footer-desc { font-size: 13px; color: rgba(255,255,255,.35); line-height: 1.6; max-width: 260px; }
+        .pp-footer .footer-col-title { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: .5px; }
+        .pp-footer .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,.35); margin-bottom: 8px; }
+        .pp-footer .footer-col a:hover { color: rgba(255,255,255,.6); }
+        .pp-footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-top: 20px; }
+        .pp-footer .badges { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .pp-footer .badge-item { font-size: 9px; font-weight: 700; color: rgba(255,255,255,.25); background: rgba(255,255,255,.04); padding: 3px 10px; border-radius: 4px; letter-spacing: 1px; }
+        .pp-footer .legal { font-size: 10px; color: rgba(255,255,255,.2); line-height: 1.6; max-width: 800px; }
+        .pp-footer .copy { font-size: 10px; color: rgba(255,255,255,.15); margin-top: 8px; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .dual-cards { grid-template-columns: 1fr; }
+            .pp-cxc .inner { grid-template-columns: 1fr; }
+            .pp-cxp .inner { grid-template-columns: 1fr; }
+            .pp-proof .inner { grid-template-columns: repeat(2, 1fr); }
+            .pp-footer .footer-grid { grid-template-columns: 1fr 1fr; }
+            .pp-hero h1 { font-size: 32px; }
+            .section-title { font-size: 28px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══ NAV ═══ -->
+    <nav class="pp-nav" id="pp-nav">
+        <div class="nav-inner">
+            <div class="logo-wrap">
+                <img src="../assets/img/logo.png" alt="Liquicapital" id="nav-logo-white">
+                <img src="../assets/img/logo3.png" alt="Liquicapital" id="nav-logo-dark" style="display:none;">
+            </div>
+            <div class="nav-links">
+                <a href="#cxc">Cuentas por cobrar</a>
+                <a href="#cxp">Cuentas por pagar</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="https://app.liquicapital.com/clients" class="btn-cta">Ingresa</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="pp-hero">
+        <div class="glow"></div>
+        <div class="grid-bg"></div>
+        <div class="hero-inner">
+            <div class="hero-center">
+                <div class="badge" data-aos="fade-down">
+                    <div class="dot"></div>
+                    <span>Supply Chain Finance — México &amp; Colombia</span>
+                </div>
+                <h1 data-aos="fade-up" data-aos-delay="100">Haz que el capital<br>fluya en tu cadena</h1>
+                <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">Financiamiento ágil para las dos puntas de tu cadena de suministro. Sin deuda bancaria. Sin procesos lentos. 100% digital.</p>
+
+                <!-- DUAL CARDS -->
+                <div class="dual-cards">
+                    <div class="dual-card card-blue" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-icon"><i class="ri-file-text-line" style="color:var(--blue);"></i></div>
+                        <div class="card-label" style="color:var(--blue);">Cuentas por cobrar</div>
+                        <div class="card-title">Cobra tus facturas hoy,<br>no en 60 días</div>
+                        <p class="card-desc">Anticipa el cobro de tus facturas de forma simple, digital y sin adquirir deuda. Tu dinero, cuando lo necesitas.</p>
+                        <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&amp;client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&amp;nonce=defaultNonce&amp;redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&amp;scope=openid&amp;response_type=id_token&amp;prompt=login&amp;signingup=true&amp;allianceCode=20" class="card-btn" style="background:var(--blue);">Quiero cobrar mis facturas <span>&#8594;</span></a>
+                    </div>
+                    <div class="dual-card card-green" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-icon"><i class="ri-building-2-line" style="color:var(--green);"></i></div>
+                        <div class="card-label" style="color:var(--green);">Cuentas por pagar</div>
+                        <div class="card-title">Dale gasolina a tus proveedores para seguir produciendo</div>
+                        <p class="card-desc">Tus proveedores cobran al instante, tú mantienes tus plazos. Sin costo, sin deuda, sin trámites engorrosos.</p>
+                        <a href="#cxp" class="card-btn" style="background:var(--green);">Quiero fortalecer mi cadena <span>&#8594;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust bar -->
+            <div class="trust-bar" data-aos="fade-up" data-aos-delay="500">
+                <span class="label">Respaldados por:</span>
+                <span class="item">KANDEO</span>
+                <span class="item">MONEX</span>
+                <span class="item">CESCE</span>
+                <span class="item">MUNICH RE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CxC SECTION ═══ -->
+    <section id="cxc" class="pp-cxc">
+        <div class="inner">
+            <div data-aos="fade-right">
+                <span class="section-label" style="color:var(--blue);">Cuentas por cobrar</span>
+                <h2 class="section-title" style="color:var(--dark);">&iquest;Cuánto capital está detenido en tus facturas?</h2>
+                <p class="section-desc" style="color:var(--sub);">Si facturas a 30–120 días, tu capital está atrapado esperando. Con Liquicapital lo liberas en menos de 24 horas, sin deuda bancaria, sin comprometer activos.</p>
+                <div class="tags">
+                    <span class="tag">Sin deuda</span>
+                    <span class="tag">100% digital</span>
+                    <span class="tag">En menos de 24h</span>
+                    <span class="tag">Hasta 90% de aforo</span>
+                </div>
+                <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&amp;client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&amp;nonce=defaultNonce&amp;redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&amp;scope=openid&amp;response_type=id_token&amp;prompt=login&amp;signingup=true&amp;allianceCode=20" class="btn-primary" style="background:var(--blue);">Registrarme gratis &#8594;</a>
+            </div>
+            <div class="steps-card" data-aos="fade-left">
+                <div class="steps-label">4 pasos para cobrar</div>
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <div><div class="step-title">Crea una cuenta</div><div class="step-desc">Regístrate con tu email y RFC en 2 minutos.</div></div>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <div><div class="step-title">Deja tu CIEC</div><div class="step-desc">Vinculamos tu información fiscal del SAT de forma segura.</div></div>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <div><div class="step-title">Selecciona tus clientes</div><div class="step-desc">Elige los pagadores con los que quieres operar.</div></div>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <div><div class="step-title">Firma y cobra</div><div class="step-desc">Firma digital con tu FIEL. Dinero en tu cuenta en &lt;24h.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CxP SECTION ═══ -->
+    <section id="cxp" class="pp-cxp">
+        <div class="inner">
+            <div class="benefits-card" data-aos="fade-right">
+                <div class="benefits-label">Beneficios para tu empresa</div>
+                <div class="benefit">
+                    <span class="benefit-icon"><i class="ri-links-line" style="color:var(--green);"></i></span>
+                    <div><div class="benefit-title">Cadena fortalecida</div><div class="benefit-desc">Proveedores con liquidez producen mejor y entregan a tiempo.</div></div>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon"><i class="ri-bar-chart-grouped-line" style="color:var(--green);"></i></span>
+                    <div><div class="benefit-title">Plazos flexibles</div><div class="benefit-desc">Mantén o extiende tus plazos sin fricciones ni renegociaciones.</div></div>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon"><i class="ri-shield-check-line" style="color:var(--green);"></i></span>
+                    <div><div class="benefit-title">Cero riesgo</div><div class="benefit-desc">No genera deuda, garantías ni impacto en tu balance.</div></div>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon"><i class="ri-rocket-2-line" style="color:var(--green);"></i></span>
+                    <div><div class="benefit-title">Implementación ágil</div><div class="benefit-desc">Programa activo en semanas, sin trámites engorrosos.</div></div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <span class="section-label" style="color:var(--green);">Cuentas por pagar — Pronto Pago</span>
+                <h2 class="section-title" style="color:#fff;">Tu cadena necesita gasolina para seguir produciendo</h2>
+                <p class="section-desc" style="color:rgba(255,255,255,.55);">Implementamos un programa de pronto pago a la medida de tu empresa. Tus proveedores cobran al instante, tú mantienes el control total de tus plazos. Sin costo para ti.</p>
+                <p style="font-size:14px;color:rgba(255,255,255,.4);line-height:1.55;margin:0 0 28px;">Cada implementación es personalizada. Nuestro equipo te acompaña desde el diseño del programa hasta la afiliación de proveedores.</p>
+                <button class="btn-primary" style="background:var(--green);">Solicitar consultoría especializada &#8594;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SOCIAL PROOF ═══ -->
+    <section id="nosotros" class="pp-proof">
+        <div class="inner" data-aos="fade-up">
+            <div class="metric">
+                <div class="metric-val">+1,200</div>
+                <div class="metric-label">Facturas financiadas</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val">$85M+</div>
+                <div class="metric-label">MXN desembolsados</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val">+350</div>
+                <div class="metric-label">PyMEs atendidas</div>
+            </div>
+            <div class="metric">
+                <div class="metric-val">&lt;1%</div>
+                <div class="metric-label">Tasa de default</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="pp-cta">
+        <div class="inner" data-aos="fade-up">
+            <h2>&iquest;Listo para hacer fluir tu capital?</h2>
+            <p>Únete a cientos de empresas que ya optimizan su cadena de suministro.</p>
+            <div class="btns">
+                <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&amp;client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&amp;nonce=defaultNonce&amp;redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&amp;scope=openid&amp;response_type=id_token&amp;prompt=login&amp;signingup=true&amp;allianceCode=20" class="btn-primary" style="background:var(--blue);">Registrarme gratis</a>
+                <a href="#" class="btn-outline">Hablar con un asesor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="pp-footer">
+        <div class="inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../assets/img/logo.png" alt="Liquicapital">
+                    <p class="footer-desc">Supply Chain Finance — Financiamiento inteligente para cadenas de suministro en México y Colombia.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Producto</div>
+                    <a href="#cxc">Cuentas por cobrar</a>
+                    <a href="#cxp">Cuentas por pagar</a>
+                    <a href="#">Simulador</a>
+                    <a href="#">Precios</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Empresa</div>
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Equipo</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">Legal</div>
+                    <a href="../assets/docs/aviso-privacidad.pdf" target="_blank">Aviso de privacidad</a>
+                    <a href="#">Términos y condiciones</a>
+                    <a href="https://www.condusef.gob.mx/" target="_blank">CONDUSEF</a>
+                    <a href="#">UNE</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="badges">
+                    <span class="badge-item">SOFOM E.N.R.</span>
+                    <span class="badge-item">CNBV</span>
+                    <span class="badge-item">CONDUSEF</span>
+                    <span class="badge-item">RECA</span>
+                </div>
+                <p class="legal">Administradora Liquicapital, S.A. de C.V., SOFOM, E.N.R. No requiere autorización de la SHCP para su constitución y operación. Está sujeta a la supervisión de la CNBV exclusivamente para efectos del artículo 56 de la Ley General de Organizaciones y Actividades Auxiliares del Crédito. Contrato registrado ante RECA-CONDUSEF.</p>
+                <p class="copy">&copy; 2026 Supply Capital Technologies. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor JS -->
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        AOS.init({ duration: 700, easing: 'ease-out', once: true });
+
+        // Nav scroll + logo swap
+        var nav = document.getElementById('pp-nav');
+        var logoW = document.getElementById('nav-logo-white');
+        var logoD = document.getElementById('nav-logo-dark');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+                logoW.style.display = 'none';
+                logoD.style.display = 'block';
+            } else {
+                nav.classList.remove('scrolled');
+                logoW.style.display = 'block';
+                logoD.style.display = 'none';
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var t = document.querySelector(this.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+    </script>
+
+</body>
+</html>
