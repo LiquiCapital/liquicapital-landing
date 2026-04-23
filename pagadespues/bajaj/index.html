@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Liquicapital × Bajaj — Programa Paga Después</title>
+    <meta
+        content="Cupo revolvente para aliados de Bajaj. Compra refacciones, motos o servicios y paga con plazo. 100% digital."
+        name="description">
+    <meta content="bajaj, paga después, BNPL, taller, refacciones, liquicapital, cupo de crédito" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../../assets/img/favicon.png" rel="icon">
+    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="../../assets/fonts/satoshi/css/satoshi.css" rel="stylesheet">
+
+    <!-- Icon libraries -->
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Vendor CSS -->
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0B1D3A;
+            --navy-mid: #122F55;
+            --navy-light: #1A3050;
+            --blue: #00A3E0;
+            --blue-dark: #0080B3;
+            --white: #FFFFFF;
+            --off-white: #F7F8FA;
+            --dark: #1A1A2E;
+            --sub: #4A5568;
+            --muted: #8896A6;
+            --light: #E2E8F0;
+            --green: #10B981;
+            --green-soft: #D1FAE5;
+            --partner: #003F87;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Satoshi', system-ui, sans-serif;
+            background: var(--white);
+        }
+
+        ::selection {
+            background: rgba(0, 163, 224, 0.19);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ── HEADER ── */
+        .pp-header {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--light);
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .pp-header .inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pp-header .brands {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .pp-header .brands img {
+            height: 100px;
+            width: auto;
+        }
+
+        .pp-header .brands .divider {
+            color: var(--light);
+            font-size: 28px;
+        }
+
+        .pp-header .brands .partner-logo {
+            height: 80px;
+        }
+
+        .pp-header .exclusive {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--muted);
+            background: var(--off-white);
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+
+        /* ── HERO ── */
+        .pp-hero {
+            background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pp-hero .glow {
+            position: absolute;
+            inset: 0;
+            opacity: .03;
+            background-image: radial-gradient(circle at 70% 30%, rgba(0, 163, 224, .3) 0%, transparent 50%);
+        }
+
+        .pp-hero .hero-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Sinergia */
+        .sinergia {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .sinergia .logo-box {
+            width: 88px;
+            height: 88px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sinergia .logo-box img {
+            max-height: 56px;
+            max-width: 70px;
+        }
+
+        .sinergia .partner-box {
+            width: 88px;
+            height: 88px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .06);
+            border: 2px dashed rgba(255, 255, 255, .15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .sinergia .partner-box img {
+            max-height: 64px;
+            max-width: 72px;
+        }
+
+        .sinergia .connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .sinergia .connector .line {
+            width: 48px;
+            height: 2px;
+            background: var(--blue);
+            border-radius: 1px;
+        }
+
+        .sinergia .connector span {
+            font-size: 10px;
+            color: rgba(255, 255, 255, .3);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+
+        .pp-hero .hero-text {
+            text-align: center;
+        }
+
+        .pp-hero .hero-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .pp-hero h1 {
+            font-size: clamp(24px, 4vw, 38px);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.1;
+            margin: 0 0 14px;
+            letter-spacing: -.5px;
+        }
+
+        .pp-hero .hero-sub {
+            font-size: 16px;
+            color: rgba(255, 255, 255, .55);
+            line-height: 1.6;
+            max-width: 520px;
+            margin: 0 auto 28px;
+        }
+
+        .pp-hero .btn-primary {
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 10px;
+            border: none;
+            background: var(--blue);
+            color: #fff;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ── STEPS ── */
+        .pp-steps {
+            padding: 56px 0;
+            background: var(--white);
+        }
+
+        .pp-steps .inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .pp-steps .header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .pp-steps .header .label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .pp-steps .header h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .pp-steps .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pp-steps .step-card {
+            background: var(--off-white);
+            border-radius: 16px;
+            padding: 28px 22px;
+            text-align: center;
+            position: relative;
+        }
+
+        .pp-steps .step-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--white);
+            border: 1.5px solid var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            font-size: 20px;
+            color: var(--blue);
+        }
+
+        .pp-steps .step-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .pp-steps .step-desc {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .pp-steps .arrow {
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: var(--light);
+        }
+
+        /* ── BENEFITS ── */
+        .pp-benefits {
+            padding: 48px 0;
+            background: var(--off-white);
+        }
+
+        .pp-benefits .inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .pp-benefits .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .pp-benefits .benefit-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px 22px;
+            display: flex;
+            gap: 14px;
+            border: 1px solid var(--light);
+        }
+
+        .pp-benefits .benefit-icon {
+            font-size: 22px;
+            flex-shrink: 0;
+            line-height: 1;
+            width: 28px;
+            text-align: center;
+            color: var(--blue);
+        }
+
+        .pp-benefits .benefit-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .pp-benefits .benefit-desc {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* ── FAQ ── */
+        .pp-faq {
+            padding: 48px 0;
+            background: var(--white);
+        }
+
+        .pp-faq .inner {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .pp-faq h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .pp-faq .faq-item {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .pp-faq .faq-q {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .pp-faq .faq-a {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        /* ── CTA ── */
+        .pp-cta {
+            padding: 48px 0;
+            background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+            text-align: center;
+        }
+
+        .pp-cta .inner {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .pp-cta h2 {
+            font-size: 26px;
+            font-weight: 900;
+            color: #fff;
+            margin: 0 0 12px;
+        }
+
+        .pp-cta p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, .5);
+            margin: 0 0 24px;
+        }
+
+        .pp-cta .btn-primary {
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px 40px;
+            border-radius: 10px;
+            border: none;
+            background: var(--blue);
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        /* ── FOOTER ── */
+        .pp-footer {
+            background: #060E1A;
+            padding: 24px 0;
+        }
+
+        .pp-footer .inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .pp-footer .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .pp-footer .top .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pp-footer .top .brand img {
+            height: 28px;
+            width: auto;
+        }
+
+        .pp-footer .top .brand span {
+            font-size: 10px;
+            color: rgba(255, 255, 255, .2);
+        }
+
+        .pp-footer .badges {
+            display: flex;
+            gap: 6px;
+        }
+
+        .pp-footer .badge-item {
+            font-size: 8px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .2);
+            background: rgba(255, 255, 255, .03);
+            padding: 2px 8px;
+            border-radius: 3px;
+            letter-spacing: .8px;
+        }
+
+        .pp-footer .legal {
+            font-size: 9px;
+            color: rgba(255, 255, 255, .15);
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .pp-steps .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pp-steps .arrow {
+                display: none;
+            }
+
+            .pp-benefits .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pp-hero h1 {
+                font-size: 26px;
+            }
+
+            .pp-footer .top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══ HEADER (co-branded) ═══ -->
+    <header class="pp-header">
+        <div class="inner">
+            <div class="brands">
+                <img src="../../assets/img/logo3.png" alt="Liquicapital">
+                <span class="divider">&#215;</span>
+                <img src="../../assets/img/logo-bajaj.png" alt="Bajaj" class="partner-logo">
+            </div>
+            <span class="exclusive">Programa exclusivo</span>
+        </div>
+    </header>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="pp-hero">
+        <div class="glow"></div>
+        <div class="hero-inner">
+            <!-- Sinergia visual -->
+            <div class="sinergia" data-aos="fade-up">
+                <div class="logo-box">
+                    <img src="../../assets/img/logo-bg.png" alt="Liquicapital">
+                </div>
+                <div class="connector">
+                    <div class="line"></div>
+                    <span>SINERGIA</span>
+                    <div class="line"></div>
+                </div>
+                <div class="partner-box">
+                    <img src="../../assets/img/logo-bajaj.png" alt="Bajaj">
+                </div>
+            </div>
+
+            <div class="hero-text">
+                <div class="hero-label" data-aos="fade-up" data-aos-delay="100">Programa Paga Después</div>
+                <h1 data-aos="fade-up" data-aos-delay="150">Como aliado de Bajaj,<br>ahora compras refacciones y pagas
+                    después</h1>
+                <p class="hero-sub" data-aos="fade-up" data-aos-delay="200">Bajaj se asoció con Liquicapital para darte
+                    un cupo de crédito que usas cuando lo necesites. Compra hoy, paga con plazo. 100% digital, sin
+                    descapitalizar tu taller.</p>
+                <div data-aos="fade-up" data-aos-delay="250">
+                    <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&amp;client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&amp;nonce=defaultNonce&amp;redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&amp;scope=openid&amp;response_type=id_token&amp;prompt=login&amp;signingup=true&amp;allianceCode=22"
+                        class="btn-primary">Solicitar mi cupo <span>&#8594;</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ 3 STEPS ═══ -->
+    <section class="pp-steps">
+        <div class="inner">
+            <div class="header" data-aos="fade-up">
+                <span class="label">Así de simple</span>
+                <h2>3 pasos para activar tu cupo</h2>
+            </div>
+            <div class="grid">
+                <div class="step-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-icon"><i class="ri-user-add-line"></i></div>
+                    <div class="step-title">Crea tu cuenta</div>
+                    <div class="step-desc">Regístrate con tu email y RFC. Toma 2 minutos.</div>
+                    <span class="arrow">&#8594;</span>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-icon"><i class="ri-lock-2-line"></i></div>
+                    <div class="step-title">Vincula tu CIEC</div>
+                    <div class="step-desc">Conectamos con el SAT para revisar tu información fiscal de forma segura.
+                        Hacemos un breve estudio de crédito.</div>
+                    <span class="arrow">&#8594;</span>
+                </div>
+                <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-icon"><i class="ri-wallet-3-line"></i></div>
+                    <div class="step-title">Recibe tu cupo y úsalo en Bajaj</div>
+                    <div class="step-desc">Aprobamos tu cupo en 24-48 horas. Lo usas para comprar refacciones, motos o
+                        servicios de Bajaj cuando quieras.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ BENEFITS ═══ -->
+    <section class="pp-benefits">
+        <div class="inner">
+            <div class="grid">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+                    <span class="benefit-icon"><i class="ri-refresh-line"></i></span>
+                    <div>
+                        <div class="benefit-title">Cupo siempre disponible</div>
+                        <div class="benefit-desc">Un cupo revolvente que se libera cada que pagas. No vuelves a aplicar.
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="benefit-icon"><i class="ri-calendar-check-line"></i></span>
+                    <div>
+                        <div class="benefit-title">Compra ahora, paga después</div>
+                        <div class="benefit-desc">Equipa tu taller sin descapitalizarte. Plazo cómodo para liquidar.
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="benefit-icon"><i class="ri-smartphone-line"></i></span>
+                    <div>
+                        <div class="benefit-title">100% digital</div>
+                        <div class="benefit-desc">Sin sucursales, sin papeleo. Todo desde tu computadora o celular.
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="benefit-icon"><i class="ri-shield-check-line"></i></span>
+                    <div>
+                        <div class="benefit-title">Seguro y regulado</div>
+                        <div class="benefit-desc">Operamos como SOFOM E.N.R., supervisados por la CNBV. Información
+                            protegida.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="pp-faq">
+        <div class="inner">
+            <h3 data-aos="fade-up">Preguntas frecuentes</h3>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+                <div class="faq-q">&iquest;Qué es exactamente "Paga Después"?</div>
+                <div class="faq-a">Un cupo revolvente de Liquicapital pre-aprobado para usar en compras a Bajaj.
+                    Liquicapital paga a Bajaj de inmediato y tú liquidas en el plazo acordado.</div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+                <div class="faq-q">&iquest;Cuánto cuesta?</div>
+                <div class="faq-a">Pagas una tasa por el plazo que tomes. Ves la tasa exacta antes de aceptar cada
+                    operación, sin sorpresas ni costos ocultos.</div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-q">&iquest;Qué es la CIEC y por qué la piden?</div>
+                <div class="faq-a">Es tu clave del SAT. La usamos para verificar tu situación fiscal de forma automática
+                    y agilizar el estudio de crédito. Es segura.</div>
+            </div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                <div class="faq-q">&iquest;Cambia algo en mi relación con Bajaj?</div>
+                <div class="faq-a">No. Sigues comprando como siempre; solo que ahora con un cupo de Liquicapital que te
+                    da plazo para pagar.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CTA FINAL ═══ -->
+    <section class="pp-cta">
+        <div class="inner" data-aos="fade-up">
+            <h2>&iquest;Listo para equipar tu taller sin descapitalizarte?</h2>
+            <p>Solicita tu cupo Paga Después y empieza a comprar a Bajaj con plazo.</p>
+            <a href="https://liquicapitalb2c.b2clogin.com/liquicapitalb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_SIGNUP_SIGNIN&amp;client_id=11cd8a20-ce6b-4387-9f73-404575dea71e&amp;nonce=defaultNonce&amp;redirect_uri=https%3A%2F%2Fapp.liquicapital.com%2Fclients&amp;scope=openid&amp;response_type=id_token&amp;prompt=login&amp;signingup=true&amp;allianceCode=22"
+                class="btn-primary">Solicitar mi cupo &#8594;</a>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER (minimal) ═══ -->
+    <footer class="pp-footer">
+        <div class="inner">
+            <div class="top">
+                <div class="brand">
+                    <img src="../../assets/img/logo.png" alt="Liquicapital">
+                    <span>&#215; Bajaj</span>
+                </div>
+                <div class="badges">
+                    <span class="badge-item">SOFOM E.N.R.</span>
+                    <span class="badge-item">CNBV</span>
+                    <span class="badge-item">CONDUSEF</span>
+                </div>
+            </div>
+            <p class="legal">Administradora Liquicapital, S.A. de C.V., SOFOM, E.N.R. No requiere autorización de la
+                SHCP. Sujeta a supervisión de la CNBV. Contrato RECA-CONDUSEF.</p>
+        </div>
+    </footer>
+
+    <!-- Vendor JS -->
+    <script src="../../assets/vendor/aos/aos.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        AOS.init({ duration: 700, easing: 'ease-out', once: true });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+            a.addEventListener('click', function (e) {
+                var t = document.querySelector(this.getAttribute('href'));
+                if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
