@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Liquicapital - Financiamiento fácil y rápido</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+
+    <!-- Custom Simulador Styles -->
+    <style>
+        .simulador-section {
+            background: linear-gradient(135deg, #2c3e7a 0%, #1a2855 100%);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .simulador-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .text-highlight {
+            color: #2d6d7e;
+        }
+
+        .simulador-subtitle {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-simulador-cta {
+            display: inline-block;
+            background: #2d6d7e;
+            color: #2c3e7a;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-simulador-cta:hover {
+            background: #1f4f5c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(240, 173, 78, 0.4);
+        }
+
+        .simulador-calculator {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .calculator-label {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .slider-custom {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, #2d6d7e 0%, #2d6d7e 2.5%, #444 2.5%, #444 100%);
+            outline: none;
+            border-radius: 50px;
+            margin: 20px 0;
+        }
+
+        .slider-custom::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider-custom::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider-labels-custom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 10px;
+        }
+
+        .amount-display {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin: 30px 0;
+        }
+
+        .options-custom {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .option-custom {
+            border: 2px solid #2d6d7e;
+            border-radius: 50px;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: white;
+            background: transparent;
+        }
+
+        .option-custom:hover {
+            background-color: #2d6d7e;
+            color: #2c3e7a;
+        }
+
+        .option-custom.selected {
+            background-color: #2d6d7e;
+            color: #2c3e7a;
+        }
+
+        .btn-info-cta {
+            display: block;
+            width: 100%;
+            background: #2d6d7e;
+            color: #2c3e7a;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-info-cta:hover {
+            background: #1f4f5c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(240, 173, 78, 0.4);
+        }
+
+        @media (max-width: 991px) {
+            .simulador-title {
+                font-size: 2rem;
+            }
+
+            .amount-display {
+                font-size: 2.5rem;
+            }
+
+            .simulador-calculator {
+                padding: 30px 20px;
+            }
+        }
+
+        /* ===== OVERRIDE ALL GREEN COLORS TO YELLOW/ORANGE ===== */
+
+        /* Main CTA buttons - WHITE TEXT */
+        .btn-get-started,
+        #hero .btn-get-started,
+        .btn-simulador-cta,
+        .btn-info-cta {
+            background: #2d6d7e !important;
+            color: #ffffff !important;
+            border-color: #2d6d7e !important;
+        }
+
+        .btn-get-started:hover,
+        #hero .btn-get-started:hover,
+        .btn-simulador-cta:hover,
+        .btn-info-cta:hover {
+            background: #1f4f5c !important;
+            color: #ffffff !important;
+            border-color: #1f4f5c !important;
+        }
+
+        /* Secondary buttons with white bg */
+        .btn-sign-in {
+            background: #fff !important;
+            color: #2c3e7a !important;
+            border: 1px solid #2c3e7a !important;
+        }
+
+        .btn-sign-in:hover {
+            background: #f0f0f0 !important;
+            color: #2c3e7a !important;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            background: #2d6d7e !important;
+        }
+
+        .back-to-top:hover {
+            background: #1f4f5c !important;
+        }
+
+        /* All icons - override any green colors */
+        .icon-box i,
+        .count-box i,
+        footer i,
+        .bx,
+        .ri-shield-check-line,
+        .ri-store-line,
+        .ri-umbrella-line,
+        .ri-file-list-3-line,
+        .ri-calendar-todo-line {
+            color: #2d6d7e !important;
+        }
+
+        /* Specific icon color for bank/blue theme */
+        .ri-bank-line {
+            color: #2c3e7a !important;
+        }
+
+        /* Section title decorations */
+        .section-title h2::before,
+        .section-title h2::after {
+            background: #2d6d7e !important;
+        }
+
+        /* Navbar - WHITE TEXT with yellow indicator */
+        #header .nav-link {
+            color: #ffffff !important;
+        }
+
+        #header .nav-link.active,
+        #header .nav-link:hover {
+            color: #ffffff !important;
+        }
+
+        #header .nav-link.active::before {
+            background: #2d6d7e !important;
+        }
+
+        /* Mobile nav toggle */
+        .mobile-nav-toggle {
+            color: #fff !important;
+        }
+
+        /* Count boxes */
+        .count-box i {
+            color: #ffffff !important;
+            background: #2d6d7e !important;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .counts .count-box i {
+            background: #2d6d7e !important;
+            color: #ffffff !important;
+        }
+
+        /* Highlight text */
+        .highlight {
+            color: #2d6d7e !important;
+        }
+
+        /* Options/selectors */
+        .option,
+        .option-custom {
+            border: 2px solid #2d6d7e !important;
+            color: #fff !important;
+        }
+
+        .option:hover,
+        .option.selected,
+        .option-custom:hover,
+        .option-custom.selected {
+            background-color: #2d6d7e !important;
+            color: #ffffff !important;
+        }
+
+        /* Footer background and text */
+        #footer {
+            background: #2c3e7a !important;
+            border-top: 3px solid #2d6d7e !important;
+        }
+
+        .footer-top {
+            background: #2c3e7a !important;
+            border-top-color: #2d6d7e !important;
+        }
+
+        /* Footer info box border */
+        #footer .footer-top .footer-info {
+            border-top: 4px solid #2d6d7e !important;
+            background: #2c3e7a !important;
+        }
+
+        /* Footer elements */
+        .footer-newsletter input[type="submit"] {
+            background: #2d6d7e !important;
+            border: none !important;
+            color: #ffffff !important;
+        }
+
+        .footer-newsletter input[type="submit"]:hover {
+            background: #1f4f5c !important;
+        }
+
+        /* Footer border accents - YELLOW not green */
+        footer [style*="border-left: 4px solid"] {
+            border-left-color: #2d6d7e !important;
+        }
+
+        /* Quote icons */
+        .quote-icon-left,
+        .quote-icon-right {
+            color: #2d6d7e !important;
+        }
+
+        /* FAQ - Only open/active question should be yellow */
+        .faq-list a {
+            color: #444444 !important;
+        }
+
+        .faq-list a:not(.collapsed) {
+            color: #2d6d7e !important;
+        }
+
+        .faq-list .icon-help {
+            color: #2d6d7e !important;
+        }
+
+        .faq-list .icon-show,
+        .faq-list .icon-close {
+            color: #2d6d7e !important;
+        }
+
+        /* Hero waves - keep white */
+        .hero-waves use {
+            fill: #fff !important;
+        }
+
+        /* Overlay/Modal CTA */
+        .lc-overlay__cta {
+            background: #2d6d7e !important;
+            color: #ffffff !important;
+        }
+
+        .lc-overlay__cta:hover {
+            background: #1f4f5c !important;
+            color: #ffffff !important;
+        }
+
+        /* Preloader */
+        #preloader:before {
+            border: 6px solid #2d6d7e !important;
+            border-top-color: #d4ebe2 !important;
+        }
+
+        /* Links - only in content areas, not navigation */
+        main a,
+        footer a:not(.btn-get-started):not([type="submit"]) {
+            color: #2d6d7e !important;
+        }
+
+        main a:hover,
+        footer a:hover:not(.btn-get-started):not([type="submit"]) {
+            color: #1f4f5c !important;
+        }
+
+        /* Any remaining green colors from style.css */
+        [style*="#1acc8d"],
+        [style*="#17b57d"],
+        [style*="#5fcf80"],
+        [style*="#11dbcf"],
+        [style*="rgb(26 204 141)"],
+        [style*="rgb(26, 204, 241)"] {
+            color: #2d6d7e !important;
+        }
+
+        /* Override background colors */
+        [style*="background:#1acc8d"],
+        [style*="background: #1acc8d"],
+        [style*="background-color:#1acc8d"],
+        [style*="background-color: #1acc8d"],
+        [style*="background: #5fcf80"],
+        [style*="background-color: #5fcf80"] {
+            background: #2d6d7e !important;
+            background-color: #2d6d7e !important;
+        }
+
+        /* Override border colors */
+        [style*="border-color:#1acc8d"],
+        [style*="border-color: #1acc8d"],
+        [style*="border: 6px solid #1acc8d"],
+        [style*="border-left: 4px solid #5fcf80"] {
+            border-color: #2d6d7e !important;
+        }
+
+        /* Header: navy sólido para que logos y nav (texto blanco) siempre lean */
+        #header.header-transparent {
+            background: rgba(11, 29, 58, 0.95);
+            height: 80px;
+        }
+        /* Pill sutil detrás del logo LiquiCapital para eco visual con el pill blanco de YTC */
+        .logo .lc-chip {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 4px 10px;
+        }
+
+        /* Simulador: fondo blanco (invertido), texto y controles oscurecidos para lectura */
+        .simulador-section {
+            background: #ffffff !important;
+            color: #1a2855 !important;
+        }
+        .simulador-section .simulador-title { color: #1a2855; }
+        .simulador-section .simulador-subtitle { color: #4a5568; }
+        .simulador-section .simulador-calculator {
+            background: #f7f8fa;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(26, 40, 85, 0.08);
+        }
+        .simulador-section .calculator-label { color: #1a2855; }
+        .simulador-section .amount-display { color: #1a2855; }
+        .simulador-section .slider-labels-custom { color: #4a5568; }
+        /* Chips de plazo: mientras no estén seleccionados, texto oscuro */
+        .simulador-section .option-custom { color: #2d6d7e !important; }
+        .simulador-section .option-custom:hover,
+        .simulador-section .option-custom.selected {
+            background-color: #2d6d7e !important;
+            color: #ffffff !important;
+        }
+
+        /* Onda superior del hero: espejo de la de abajo, transiciona del blanco al navy */
+        #hero {
+            padding-top: 140px !important;
+            overflow: hidden;
+        }
+        #hero .hero-waves.hero-waves-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 60px;
+            margin-top: 0;
+            transform: scaleY(-1);
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+
+    <!-- =======================================================
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: Liquicapital Innapsis
+  ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <a href="index.html" style="display:flex;align-items:center;gap:14px;">
+                    <span class="lc-chip">
+                        <img src="/assets/img/logo-bg.png" alt="LiquiCapital" class="img-fluid" style="height:32px;display:block;">
+                    </span>
+                    <span aria-hidden="true" style="width:1px;height:28px;background:rgba(255,255,255,.25);"></span>
+                    <span style="display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:8px;padding:4px 10px;">
+                        <img src="/assets/img/logo-yoteconekto.png" alt="Yo Te Conekto" class="img-fluid" style="height:44px;display:block;">
+                    </span>
+                </a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#simulador">Calculadora</a></li>
+                    <li><a class="nav-link scrollto" href="#beneficios-yoteconekto">Beneficios</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Cómo Funciona</a></li>
+                    <li><a class="nav-link scrollto" href="#normatividad">Normatividad</a></li>
+                    <li class="d-block d-md-none mt-2">
+                        <a href="https://app.liquicapital.com/clients/v3/login"
+                            style="background:#fff;color:#2c3e7a;border:1px solid #2c3e7a; margin: 15px;"
+                            class="btn btn-sm btn-block mb-2">Iniciar Sesión</a>
+                        <a href="https://app.liquicapital.com/clients/v3/registro?allianceCode=26"
+                            style="background:#2d6d7e;color:#2c3e7a;border:1px solid #2d6d7e; margin: 15px;"
+                            class="btn btn-sm btn-primary btn-block"> </i>Registrarme</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions d-none d-md-flex align-items-center">
+                <div class="me-2">
+                    <a href="https://app.liquicapital.com/clients/v3/login"
+                        style="background:#fff;color:#2c3e7a;border:1px solid #2c3e7a;"
+                        class="btn-sign-in scrollto">Iniciar Sesión</a>
+                </div>
+                <div>
+                    <a href="https://app.liquicapital.com/clients/v3/registro?allianceCode=26"
+                        class="btn-get-started scrollto">Registrarme</a>
+                </div>
+            </div>
+
+            <i class="bi bi-list mobile-nav-toggle"></i>
+
+        </div>
+    </header><!-- End Header -->
+
+    <!-- ======= Simulador / Calculadora ======= -->
+    <section id="simulador" class="simulador-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Columna Izquierda: Texto y CTA -->
+                <div class="col-lg-5 col-md-12 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h1 class="simulador-title">
+                        Convierte tus facturas en <span class="text-highlight">efectivo inmediato</span>
+                    </h1>
+                    <p class="simulador-subtitle">
+                        Obtén liquidez en 48 horas con tasas preferenciales. Factoraje financiero simple y confiable
+                        para tu negocio.
+                    </p>
+                    <a href="#signup-overlay" class="btn-simulador-cta">Solicitar mi línea ahora</a>
+                </div>
+
+                <!-- Columna Derecha: Calculadora -->
+                <div class="col-lg-7 col-md-12" data-aos="fade-left">
+                    <div class="simulador-calculator">
+                        <h5 class="calculator-label">Monto total de tus facturas</h5>
+                        <input class="slider-custom" type="range" id="amountRange" min="25000" max="1000000"
+                            value="25000" oninput="updateAmountValue(this.value)">
+                        <div class="slider-labels-custom">
+                            <span>$25,000 MXN</span>
+                            <span>$1,000,000 MXN</span>
+                        </div>
+                        <h2 id="amountValue" class="amount-display">$25,000</h2>
+
+                        <h5 class="calculator-label mt-4">¿En qué plazo te pagan tus facturas en promedio?</h5>
+                        <input style="display: none;" id="daysValue" value="45" oninput="updateDaysValue(this.value)">
+                        <div class="options-custom">
+                            <div class="option-custom" data-value="35">35</div>
+                            <div class="option-custom" data-value="45">45</div>
+                            <div class="option-custom" data-value="60">60</div>
+                            <div class="option-custom" data-value="90">90</div>
+                            <div class="option-custom" data-value="120">120</div>
+                        </div>
+
+                        <a href="#signup-overlay" class="btn-info-cta mt-4">Quiero más información</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Simulador -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <svg class="hero-waves hero-waves-top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path-top" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path-top" x="50" y="3" fill="rgba(255,255,255, .1)">
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path-top" x="50" y="0" fill="rgba(255,255,255, .2)">
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path-top" x="50" y="9" fill="#fff">
+            </g>
+        </svg>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+                    <div data-aos="zoom-out">
+                        <h1>Yo Te Conekto y Liquicapital en alianza te ayudan a mejorar tu flujo de efectivo</h1>
+                        <h2>Convierte tus cuentas por cobrar en efectivo <b>en 48 horas</b> con tasas preferenciales y
+                            límites de
+                            crédito ampliados.</h2>
+                        <div class="text-center text-lg-start">
+                            <a href="#simulador" class="btn-get-started scrollto">Solicitar mi línea ahora $</a>
+                            <a href="#about" class="btn-get-started scrollto"
+                                style="background:transparent;color:#2d6d7e;border:2px solid #2d6d7e;">Conoce cómo funciona</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+                    <img src="/assets/img/hero-img.png" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+            </g>
+        </svg>
+    </section><!-- End Hero -->
+
+    <main id="main">
+        <!-- ======= Beneficios Yo Te Conekto ======= -->
+        <section id="beneficios-yoteconekto" class="about section-bg">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Beneficios para clientes de Yo Te Conekto</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul style="font-size:1.15rem;">
+                            <!-- <li><b>Tasas especiales:</b> ahorros sobre la comisión estándar.</li> -->
+                            <li><b>Límites superiores:</b> líneas desde $250,000 MXN hasta $20 millones según tus
+                                ventas.</li>
+                            <li><b>Menos documentación requerida:</b> gracias a la alianza con Yo Te Conekto.</li>
+                            <li><b>Atención prioritaria:</b> gestor dedicado disponible 24/7 en WhatsApp.</li>
+                            <li><b>Seguridad en tus pagos:</b> Tu cliente paga y recibes el porcentaje restante menos
+                                los
+                                intereses correspondientes.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="mb-3"
+                            style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:10px;width:100%;max-width:600px;">
+                            <img src="/assets/img/logo3.png" alt="LiquiCapital" style="height:54px;width:auto;"
+                                class="img-fluid">
+                            <span style="font-size:1.1rem;line-height:1.3;">LiquiCapital adelanta el pago de los CFDIs
+                                de tus clientes para darte liquidez inmediata</span>
+                        </div>
+                        <div
+                            style="display:flex;align-items:center;gap:20px;padding:18px 24px;border-radius:10px;width:100%;max-width:600px;">
+                            <img src="/assets/img/logo-yoteconekto.png" alt="Yo Te Conekto" class="img-fluid"
+                                style="height:40px;width:auto;background:#fff;border-radius:6px;padding:2px 8px;">
+                            <span style="font-size:1.1rem;line-height:1.3;">Yo Te Conekto conecta a tus proveedores y aliados comerciales para impulsar tu operación</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Cómo Funciona ======= -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 icon-boxes d-flex flex-column align-items-start justify-content-start text-start py-5"
+                        data-aos="fade-up">
+                        <h3 style="text-align: left; margin-bottom: 30px;">¿Cómo funciona?</h3>
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon"><i class="bx bx-user"></i></div>
+                            <h4 class="title"><a href="#signup-overlay">1. Regístrate – conecta tu SAT y sube la
+                                    documentación requerida.</a></h4>
+                        </div>
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title">2. Selecciona los CFDIs que deseas anticipar – elegibles al instante.</h4>
+                        </div>
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="icon"><i class='bx  bxs-bank'></i> </div>
+                            <h4 class="title">3. Notifica a tu cliente de la nueva cuenta donde te debe depositar los
+                                pagos.</h4>
+                        </div>
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="icon"><i class="bx bx-money"></i></div>
+                            <h4 class="title">4. Recibe hasta 90 % de anticipo en 48 horas.</h4>
+                        </div>
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="icon"><i class="bx bx-check-circle"></i></div>
+                            <h4 class="title">5. Tu cliente paga y recibes el 10 % restante menos los intereses
+                                correspondientes.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Seguridad y Respaldo ======= -->
+        <section id="seguridad" class="features section-bg">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Seguridad y respaldo</h2>
+                </div>
+                <div class="row" data-aos="fade-left">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <i class="ri-shield-check-line" style="color: #2d6d7e;"></i>
+                            <h3>Plataforma certificada ISO 27001</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                            <i class="ri-bank-line" style="color: #2c3e7a;"></i>
+                            <h3>Fondos provistos por LiquiCapital, fintech líder en factoraje digital.</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+                            <i class="ri-umbrella-line" style="color: #2d6d7e;"></i>
+                            <h3>Respaldo Yo Te Conekto para fortalecer tu red de proveedores y clientes.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Testimonios ======= -->
+        <section id="testimonios" class="testimonials">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Testimonios</h2>
+                </div>
+                <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <p>
+                                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                    "Reducimos nuestro ciclo de cobro de 60 días a 24 horas. La tasa preferencial marcó
+                                    la
+                                    diferencia."<br>
+                                    <b>— Gerente Financiero, Transportes Atlas</b>
+                                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Puedes agregar más testimonios aquí -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= CTA Final ======= -->
+        <section id="cta-final" class="features">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Anticipa hoy el pago de tus facturas y haz crecer tu negocio sin fricciones.</h2>
+                </div>
+                <div style="text-align:center;">
+                    <a href="#simulador" class="btn-get-started scrollto" style="font-size:1.2rem;">Empieza ahora con tu
+                        tasa
+                        preferencial</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Counts Section ======= -->
+
+        <section id="counts" class="counts">
+            <div class="container">
+
+                <div class="row" data-aos="fade-up">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-box">
+                            <i class="bi bi-emoji-smile"></i>
+                            <span data-purecounter-start="0" data-purecounter-end="138" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Clientes</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                        <div class="count-box">
+                            <i class="bi bi-journal-richtext"></i>
+                            <span data-purecounter-start="0" data-purecounter-end="894" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>CFDIs</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                        <div class="count-box">
+                            <i class="bi bi-headset"></i>
+                            <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Soporte Dedicado</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                        <div class="count-box">
+                            <i class="bi bi-people"></i>
+                            <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
+                                class="purecounter"></span>
+                            <p>Trabajando para ti</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======= VENTAJAS ======= -->
+
+        <section id="features" class="features">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>VENTAJAS</h2>
+                    <p>ALGUNAS VENTAJAS DEL FACTORAJE</p>
+                </div>
+
+                <div class="row" data-aos="fade-left">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                            <i class="ri-store-line" style="color: #2d6d7e;"></i>
+                            <h3><a href="">Te da capital de trabajo sin endeudamiento</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 mt-4 mt-md-0">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+                            <i class="ri-calendar-todo-line" style="color: #2d6d7e;"></i>
+                            <h3><a href="">Es de corto plazo: menos intereses</a></h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 mt-4 mt-lg-0">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                            <i class="ri-file-list-3-line" style="color: #2d6d7e;"></i>
+                            <h3><a href="">Más rápido que los créditos tradicionales</a></h3>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- ======= Testimonials Section ======= -->
+        <!--      
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Rodrigo Romo</h3>
+                <h4>CEO &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Referencia 1.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Jimenez</h3>
+                <h4>Contadora</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Refencia 2.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Gonzalez</h3>
+                <h4>Gerente</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ref 3
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Mauricio David</h3>
+                <h4>Financiero</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ref 4.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Gutierrez</h3>
+                <h4>Contador</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Ref 5.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+ -->
+        <!-- ======= Normatividad Section ======= -->
+        <section id="normatividad" class="faq">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up" style="margin-bottom: 20px;">
+                    <h2>NORMATIVIDAD</h2>
+                    <p>Información Regulatoria y de Cumplimiento</p>
+                </div>
+
+                <div class="faq-list" style="padding-left: 0; max-width: 100%;">
+                    <ul>
+                        <!-- UNE -->
+                        <li data-aos="fade-up">
+                            <i class="bx bx-help-circle icon-help"></i>
+                            <a data-bs-toggle="collapse" class="collapse" data-bs-target="#normatividad-une">
+                                Unidad Especializada de Atención a Usuarios (UNE)
+                                <i class="bx bx-chevron-down icon-show"></i>
+                                <i class="bx bx-chevron-up icon-close"></i>
+                            </a>
+                            <div id="normatividad-une" class="collapse show" data-bs-parent=".faq-list">
+                                <p>
+                                    <strong>Unidad Especializada de Atención a Usuarios: Administradora Liquicapital SA
+                                        de CV SOFOM ENR</strong><br><br>
+                                    <strong>Domicilio:</strong> Espacio Santa Fe ubicado en carretera México - Toluca
+                                    No. 5420, oficina 702-A, Colonia El Yaqui, Alcaldía Cuajimalpa, CDMX. CP
+                                    05320<br><br>
+                                    <strong>Teléfono:</strong> (52) 55 9504 6600<br>
+                                    <strong>Correo electrónico:</strong> une@liquicapital.com<br>
+                                    <strong>Horario de atención:</strong> 9:00 a 17:00 horas, de lunes a viernes
+                                </p>
+                            </div>
+                        </li>
+
+                        <!-- Despachos de Cobranza -->
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <i class="bx bx-file-blank icon-help"></i>
+                            <a href="/assets/docs/poster-despachos-cobranza.pdf" target="_blank" class="collapsed">
+                                Despachos de Cobranza
+                                <i class="bx bx-link-external"></i>
+                            </a>
+                        </li>
+
+                        <!-- Buró de Entidades Financieras -->
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="bx bx-file-blank icon-help"></i>
+                            <a href="/assets/docs/poster-buro-entidades-financieras.pdf" target="_blank"
+                                class="collapsed">
+                                Buró de Entidades Financieras
+                                <i class="bx bx-link-external"></i>
+                            </a>
+                        </li>
+
+                        <!-- Aviso de Privacidad -->
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i class="bx bx-file-blank icon-help"></i>
+                            <a href="/assets/docs/aviso-privacidad.pdf" target="_blank" class="collapsed">
+                                Aviso de Privacidad
+                                <i class="bx bx-link-external"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Logos Regulatorios -->
+                <div class="row mt-5" data-aos="fade-up">
+                    <div class="col-12 text-center">
+                        <h4 style="margin-bottom: 30px;">Organismos Reguladores</h4>
+                        <div class="d-flex align-items-center justify-content-center gap-4 flex-wrap">
+                            <a href="https://eduweb.condusef.gob.mx/redeco/redeco.aspx" target="_blank"
+                                rel="noopener noreferrer" title="REDECO">
+                                <img src="/assets/img/logo-redeco.jpg" alt="REDECO"
+                                    style="height: 70px; width: auto; transition: transform 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.1)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </a>
+                            <a href="https://www.buro.gob.mx/" target="_blank" rel="noopener noreferrer"
+                                title="Buró de Entidades Financieras">
+                                <img src="/assets/img/logo-buro-EF.png" alt="Buró de Entidades Financieras"
+                                    style="height: 70px; width: auto; transition: transform 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.1)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </a>
+                            <a href="https://www.condusef.gob.mx/" target="_blank" rel="noopener noreferrer"
+                                title="CONDUSEF">
+                                <img src="/assets/img/logo-condusef.png" alt="CONDUSEF"
+                                    style="height: 70px; width: auto; transition: transform 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.1)'"
+                                    onmouseout="this.style.transform='scale(1)'">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Normatividad Section -->
+
+        <!-- ======= FAQ ======= -->
+
+        <section id="faq" class="faq section-bg">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>F.A.Q</h2>
+                    <p>Preguntas Frecuentes</p>
+                </div>
+
+                <div class="faq-list">
+                    <ul>
+                        <li data-aos="fade-up">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
+                                data-bs-target="#faq-list-1">¿Cómo funciona el factoraje? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                                <p>
+                                    Adelantamos el pago de las facturas a crédito de tus clientes para que cuentes con
+                                    la liquidez que tu
+                                    negocio necesita. Con nuestro proceso digital recibes el pago adelantado en tu
+                                    cuenta en cuestión de
+                                    horas, y nosotros cobramos tu factura al vencimiento.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-2" class="collapsed">¿Me hacen consulta en buró de crédito? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Sí, para poderte garantizar los recursos solicitamos una autorización de consulta de
+                                    buró de la
+                                    empresa y de los avalistas.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-3" class="collapsed">¿Alguien más tiene acceso a mis datos? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                                <p>Utilizamos proveedores autorizados por el SAT para la consulta de tu información, y
+                                    la almacenamos de
+                                    manera segura y exclusiva.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-4" class="collapsed">¿Cuál es el máximo monto que puedo
+                                recibir? <i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                                <p>Dependerá del comportamiento comercial que tengas con tus clientes y los montos
+                                    recientes que manejes
+                                    de facturación. No hay un monto máximo preestablecido, y procuraremos otorgarte toda
+                                    la liquidez que
+                                    requieras.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-5" class="collapsed">¿Por qué debo ingresar mis datos y mi
+                                clave CIEC en la plataforma? <i class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                                <p>Realizando este paso corremos un análisis de tus CFDIs para maximizar la oferta para
+                                    ti y facilitarte
+                                    el proceso de operación.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapsed"
+                                data-bs-target="#faq-list-6">¿Quién puede aplicar? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-6" class="collapse" data-bs-parent=".faq-list">
+                                <p>Empresas aliadas de Yo Te Conekto con facturación anual desde $5 M MXN.</p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-7" class="collapsed">¿Cuánto tiempo tarda la aprobación? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-7" class="collapse" data-bs-parent=".faq-list">
+                                <p>Menos de 48 h desde el envío de documentos completos.</p>
+                            </div>
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse"
+                                data-bs-target="#faq-list-8" class="collapsed">¿Qué costo tiene el servicio? <i
+                                    class="bx bx-chevron-down icon-show"></i><i
+                                    class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-8" class="collapse" data-bs-parent=".faq-list">
+                                <p>Comisión desde 2 % mensual sobre el importe anticipado (ahorro exclusivo Yo Te Conekto).</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-md-12 mb-4">
+                        <div class="footer-info" style="text-align: left;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 20px; text-align: left;">ADMINISTRADORA
+                                LIQUICAPITAL S.A. DE C.V. SOFOM E.N.R</h3>
+                            <p class="pb-3" style="font-style: italic; font-size: 0.95rem; text-align: left;">
+                                Trabajamos para que puedas concentrarte en lo que más importa: tu negocio.
+                            </p>
+
+                            <div
+                                style="background-color: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: left;">
+                                <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 15px; text-align: left;">
+                                    <strong>ADMINISTRADORA LIQUICAPITAL, S.A. DE C.V., SOFOM, E.N.R.</strong>, es una
+                                    empresa mexicana,
+                                    legalmente constituida, registrada ante la CONDUSEF, para su constitución y
+                                    operación, no requiere
+                                    autorización de la Secretaría de Hacienda y Crédito Público, y está sujeta a la
+                                    Supervisión y Vigilancia
+                                    de la Comisión Nacional Bancaria y de Valores, únicamente para los efectos del
+                                    Artículo 56 de la Ley
+                                    General de Organizaciones y Actividades Auxiliares del Crédito.
+                                </p>
+                                <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 0; text-align: left;">
+                                    Por lo anterior, está supervisada en materia de Prevención de Lavado de Dinero y
+                                    Financiamiento al
+                                    Terrorismo por el Servicio de Administración Tributaria (SAT) a través de la misma
+                                    CNBV, de acuerdo con
+                                    las Disposiciones de carácter general a que se refiere el artículo 115 de la Ley de
+                                    Instituciones de
+                                    Crédito en relación con el 95-bis de la Ley General de Organizaciones y Actividades
+                                    Auxiliares del
+                                    Crédito, aplicables a las Sociedades Financieras de Objeto Múltiple, publicadas en
+                                    el Diario Oficial de
+                                    la Federación el 17 de Marzo de 2011, y diversas resoluciones posteriores.
+                                </p>
+                            </div>
+
+                            <div style="font-size: 0.9rem; line-height: 1.8; text-align: left;">
+                                <p style="margin-bottom: 10px; text-align: left;">
+                                    <i class="bx bx-map" style="color: #2d6d7e; margin-right: 8px;"></i>
+                                    Espacio Santa Fe ubicado en carretera México - Toluca No. 5420, oficina 702A<br>
+                                    <span style="margin-left: 28px;">Colonia El Yaqui, Alcaldía Cuajimalpa. CDMX. C.P.
+                                        05320.</span>
+                                </p>
+                                <p style="margin-bottom: 5px; text-align: left;">
+                                    <i class="bx bx-phone" style="color: #2d6d7e; margin-right: 8px;"></i>
+                                    <strong>Phone:</strong> +52 (33) 3777 1640
+                                </p>
+                                <p style="margin-bottom: 0; text-align: left;">
+                                    <i class="bx bx-envelope" style="color: #2d6d7e; margin-right: 8px;"></i>
+                                    <strong>Email:</strong> info@liquicapital.com
+                                </p>
+                            </div>
+                            <!--               <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div> -->
+                        </div>
+                    </div>
+
+                    <!--           <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre Nosotros</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div> -->
+
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="row h-100">
+                            <!-- Newsletter -->
+                            <div class="col-lg-12 mb-4">
+                                <div class="footer-newsletter" style="text-align: left;">
+                                    <h4 style="margin-bottom: 15px; text-align: left;">Nuestra Newsletter</h4>
+                                    <p style="margin-bottom: 20px; font-size: 0.9rem; text-align: left;">
+                                        Entérate de las últimas noticias del financiamiento para empresas mexicanas.
+                                    </p>
+                                    <form action="" method="post" style="display: flex; gap: 8px;">
+                                        <input type="email" name="email" placeholder="Tu correo electrónico" style="flex: 1; padding: 10px 15px; border: 1px solid rgba(255,255,255,0.1);
+                                                      border-radius: 25px; background: rgba(255,255,255,0.05);">
+                                        <input type="submit" value="Suscribirme"
+                                            style="padding: 10px 25px; background: #2d6d7e; border: none;
+                                                      border-radius: 25px; cursor: pointer; font-weight: 600; white-space: nowrap;">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Leyendas Obligatorias -->
+                            <div class="col-lg-12">
+                                <div style="background-color: rgba(255,255,255,0.05); padding: 25px; border-radius: 8px;
+                                            border-left: 4px solid #2d6d7e;">
+                                    <h5 style="margin-bottom: 15px; font-size: 0.95rem;">
+                                        <i class="bx bx-info-circle" style="color: #2d6d7e;"></i> Información Importante
+                                    </h5>
+                                    <ul style="list-style: none; padding: 0; margin: 0;">
+                                        <li
+                                            style="font-size: 0.8rem; margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                            <i class="bx bx-check"
+                                                style="position: absolute; left: 0; color: #2d6d7e; font-size: 1.2rem;"></i>
+                                            No cumplir con tus obligaciones puede generar comisiones e intereses
+                                            moratorios (cuando apliquen).
+                                        </li>
+                                        <li
+                                            style="font-size: 0.8rem; margin-bottom: 10px; padding-left: 25px; position: relative;">
+                                            <i class="bx bx-check"
+                                                style="position: absolute; left: 0; color: #2d6d7e; font-size: 1.2rem;"></i>
+                                            Contratar créditos que excedan tu capacidad de pago afecta tu historial
+                                            crediticio.
+                                        </li>
+                                        <li
+                                            style="font-size: 0.8rem; margin-bottom: 0; padding-left: 25px; position: relative;">
+                                            <i class="bx bx-check"
+                                                style="position: absolute; left: 0; color: #2d6d7e; font-size: 1.2rem;"></i>
+                                            El avalista, obligado solidario o coacreditado responderá como obligado
+                                            principal por el total del pago frente a la entidad financiera (cuando
+                                            aplique).
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Liquicapital S.A. de C.V.</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/assets/js/main.js"></script>
+
+
+    <!-- Simulador -->
+    <script>
+        function updateAmountValue(value) {
+            const amountInput = document.getElementById('amountRange');
+            const min = amountInput.min;
+            const max = amountInput.max;
+            const percentage = ((value - min) / (max - min)) * 100;
+
+            // Update gradient
+            amountInput.style.background = `linear-gradient(to right, #2d6d7e 0%, #2d6d7e ${percentage}%, #444 ${percentage}%, #444 100%)`;
+
+            // Update display
+            document.getElementById('amountValue').innerText = `$${parseInt(value).toLocaleString('en-US')}`;
+        }
+
+        function updateDaysValue(value) {
+            document.getElementById('daysValue').value = value;
+        }
+
+        // Initialize values
+        updateAmountValue(25000);
+    </script>
+
+    <!-- Selector -->
+    <script>
+        document.querySelectorAll('.option-custom').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.option-custom').forEach(opt => opt.classList.remove('selected'));
+                option.classList.add('selected');
+                updateDaysValue(option.getAttribute('data-value'))
+            });
+        });
+    </script>
+    <div id="signup-overlay" class="lc-overlay" aria-hidden="true">
+        <a class="lc-overlay__bg" href="#about" aria-label="Cerrar"></a>
+
+        <div class="lc-overlay__card" role="dialog" aria-modal="true" aria-labelledby="lc-title">
+            <button class="lc-overlay__close" aria-label="Cerrar" onclick="location.hash='#about'">×</button>
+
+            <div class="lc-overlay__arrow" aria-hidden="true"></div>
+
+            <h3 id="lc-title">¿Listo para empezar?</h3>
+            <p>Crea tu cuenta y continúa el proceso cuando quieras.</p>
+
+            <a class="lc-overlay__cta"
+                href="https://app.liquicapital.com/clients/v3/registro?allianceCode=26"
+                rel="nofollow">
+                Registrarme
+            </a>
+            <br />
+            <br />
+            <small class="lc-overlay__hint">Podrás completar el proceso a tu ritmo.</small>
+        </div>
+    </div>
+</body>
+
+</html>
