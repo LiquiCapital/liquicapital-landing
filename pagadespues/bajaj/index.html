@@ -246,6 +246,44 @@
             gap: 10px;
         }
 
+        /* ── BANNER MOTODRIVE ── */
+        .pp-banner {
+            padding: 40px 0 0;
+            background: var(--white);
+        }
+
+        .pp-banner .inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .pp-banner a {
+            display: block;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(11, 29, 58, .12);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .pp-banner a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px rgba(11, 29, 58, .18);
+        }
+
+        .pp-banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .pp-banner .inner {
+                max-width: 480px;
+                padding: 0 16px;
+            }
+        }
+
         /* ── STEPS ── */
         .pp-steps {
             padding: 56px 0;
@@ -584,6 +622,20 @@
                         class="btn-primary">Solicitar mi cupo <span>&#8594;</span></a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ═══ BANNER MOTODRIVE ═══ -->
+    <section class="pp-banner">
+        <div class="inner" data-aos="fade-up">
+            <a href="https://app.liquicapital.com/clients/v3/registro?allianceCode=22">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="../../assets/img/banner-motodrive-bajaj-mobile.webp"
+                        width="900" height="1600">
+                    <img src="../../assets/img/banner-motodrive-bajaj.webp" width="1600" height="900" loading="lazy"
+                        alt="Motodrive en sinergia con Liquicapital: accede a financiamiento para fortalecer tu inventario de refacciones y lubricantes Bajaj. Solicita tu crédito.">
+                </picture>
+            </a>
         </div>
     </section>
 
